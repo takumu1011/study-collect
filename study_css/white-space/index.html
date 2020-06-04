@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="ALL"><!-- noindex,nofollow -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<title>white-space</title>
+<style>
+  span{
+    color: #f00;
+  }
+  h2{
+    border-top: 5px dotted #ccc;
+  }
+.sample1{
+  width: 200px;
+  background-color: #ccc;
+  white-space: normal;
+}
+.sample2{
+  width: 200px;
+  background-color: #ccc;
+  white-space: pre;
+}
+.sample3{
+  width: 200px;
+  background-color: #ccc;
+  white-space: nowrap;
+}
+.sample4{
+  width: 200px;
+  background-color: #ccc;
+  white-space: pre-wrap;
+}
+.sample5{
+  width: 200px;
+  background-color: #ccc;
+  white-space: pre-line;
+}
+</style>
+</head>
+<body>
+  <h1>white-space</h1>
+  <pre>
+    <code>
+        &lt;p class="sampleX"&gt;
+            かえるぴょこぴょこみぴょこぴょこ
+            あわせてぴょこぴょこむぴょこぴょこ
+        &lt;/p&gt;
+    </code>
+  </pre>
+
+  <h2>white-space: normal(初期値）</h2>
+  <p>ホワイトスペースを無視<br>
+    改行を<span>1半角スペースとして表示</span><br>
+    ボックスサイズが指定されている場合に<span>自動改行</span></p>
+  <p class="sample1">
+      かえるぴょこぴょこみぴょこぴょこ
+      あわせてぴょこぴょこむぴょこぴょこ
+  </p>
+
+  <h2>white-space: pre</h2>
+  <p>ホワイトスペースを<span>表示</span><br>
+    改行を<span>表示</span><br>
+    ボックスサイズが指定されている場合に自動改行しない</p>
+  <p class="sample2">
+      かえるぴょこぴょこみぴょこぴょこ
+      あわせてぴょこぴょこむぴょこぴょこ
+  </p>
+
+  <h2>white-space: nowrap</h2>
+  <p>ホワイトスペースを無視<br>
+    改行を<span>1半角スペースとして表示</span><br>
+    ボックスサイズが指定されている場合に自動改行しない</p>
+  <p class="sample3">
+      かえるぴょこぴょこみぴょこぴょこ
+      あわせてぴょこぴょこむぴょこぴょこ
+  </p>
+
+  <h2>white-space: pre-wrap</h2>
+  <p>ホワイトスペースを<span>表示</span><br>
+      改行を<span>表示</span><br>
+      ボックスサイズが指定されている場合に<span>自動改行</span></p>
+  <p class="sample4">
+      かえるぴょこぴょこみぴょこぴょこ
+      あわせてぴょこぴょこむぴょこぴょこ
+  </p>
+
+  <h2>white-space: pre-line</h2>
+  <p>ホワイトスペースを無視<br>
+      改行を<span>表示</span><br>
+      ボックスサイズが指定されている場合に<span>自動改行</span></p>
+  <p class="sample5">
+      かえるぴょこぴょこみぴょこぴょこ
+      あわせてぴょこぴょこむぴょこぴょこ
+  </p>
+
+</body>
+</html>

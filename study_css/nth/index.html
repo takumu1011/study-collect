@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>nth-child</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="stylesheet" href="./ assets / css / site.default.css">
+  <link rel="stylesheet" href="./assets/css/site.top.css">
+  <style>
+    .list_one li:nth-child(2){
+      color: #f00;
+    }
+    .list_two li span:nth-child(1){
+      color: #f00;
+    }
+    .list_three li span:nth-child(2){
+      color: #f00;
+    }
+    .dl_list_four dt:nth-child(3){
+      color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <h1>nth-child/nth-of-type</h1>
+  <p><a href="https://qiita.com/shunsuke227ono/items/6c9916f80d82b73a7025">参考</a></p>
+  <p>p:nth-child(2)の場合<br>
+    親要素から2番目がｐならcssを指定する(他の要素も含む)
+  </p>
+  <p>p:nth-of-type(2)の場合<br>
+    2番目のpタグを指定する(他の要素は含まない)
+  </p>
+  
+  <ul class="list_one">
+    <li>1番目</li>
+    <li>2番目</li>
+    <li>3番目</li>
+    <li>4番目</li>
+    <li>5番目</li>
+    <li>6番目</li>
+    <li>7番目</li>
+  </ul>
+  <pre>
+    <code>
+      .list_one li:nth-child(2){
+        color: #f00;
+      }
+    </code>
+  </pre>
+  <ul class="list_two">
+    <li><span>1番目</span></li>
+    <li><span>2番目</span></li>
+    <li><span>3番目</span></li>
+    <li><span>4番目</span></li>
+    <li><span>5番目</span></li>
+    <li><span>6番目</span></li>
+    <li><span>7番目</span></li>
+  </ul>
+  <pre>
+    <code>
+      .list_two li span:nth-child(1){
+        color: #f00;
+      }
+    </code>
+  </pre>
+  <ul class="list_three">
+    <li><span>1番目</span><span>です</li>
+      <li><span>2番目</span></li>
+      <li><span>3番目</span></li>
+      <li><span>4番目</span><span>です</span></li>
+      <li><span>5番目</span></li>
+      <li><span>6番目</span></li>
+      <li><span>7番目</span><span>です</span></li>
+    </ul>
+    <pre>
+      <code>
+        .list_three li span:nth-child(2){
+          color: #f00;
+        }
+      </code>
+    </pre>
+    
+    <dl class="dl_list_four">
+      <dt>1番目</dt>
+      <dd>1番目の説明</dd>
+      <dt>2番目</dt>
+      <dd>2番目の説明</dd>
+      <dt>3番目</dt>
+      <dd>3番目の説明</dd>
+      <dt>4番目</dt>
+      <dd>4番目の説明</dd>
+      <dt>5番目</dt>
+      <dd>5番目の説明</dd>
+    </dl>
+    <pre>
+      <code>
+        .dl_list_four dt:nth-child(3){
+          color: #f00;
+        }
+      </code>
+    </pre>
+    <p>※nth-childは同列の要素を上から数えるためこのような結果になる</p>
+    
+    <hr>
+    <h2>nth-of-typeとの違い</h2>
+    
+    <style>
+      .child_wrap span:nth-child(even){
+        color: #f00;
+      }
+      .type_wrap span:nth-of-type(even){
+        color: #f00;
+      }
+    </style>
+    <p style="border: 1px solid brown;">nth-child(even)<br>
+      兄弟要素のグループの中での<span style="color: #f00">位置</span>に基づいて選択</p>
+    <div class="child_wrap">
+      <span>span1</span>
+      <span>span2</span>
+      <span>span3</span>
+      <strong>strong4</strong>
+      <span>span5</span>
+      <span>span6</span>
+      <span>span7</span>
+      <span>span8</span>
+    </div>
+    
+    <p style="border: 1px solid brown;">nth-of-type(even)<br>
+      兄弟要素のグループの中で<span style="color: #f00">指定された型の要素を、位置</span>に基づいて選択</p>
+    <div class="type_wrap">
+      <span>span1</span>
+      <span>span2</span>
+      <span>span3</span>
+      <strong>strong4</strong>
+      <span>span5</span>
+      <span>span6</span>
+      <span>span7</span>
+      <span>span8</span>
+    </div>
+<hr>
+<p>nth-child(even)</p>
+    <div class="child_wrap">
+        <span>span1</span>
+        <p>p2</p>
+        <p>p3</p>
+        <div>div4</div>
+        <span>span5(※下のと異なりspan2がないため指定されない）</span>
+    </div>
+<hr>
+<p>nth-child(even)</p>
+<div class="child_wrap">
+    <span>span1</span>
+    <span>span2</span>
+    <p>p3</p>
+    <p>p4(※spanではないため指定されない)</p>
+    <div>div5</div>
+    <span>span6</span>
+</div>
+<hr>
+<p>nth-of-type(even)</p>
+<div class="type_wrap">
+  <span>span1</span>
+  <p>p2</p>
+  <p>p3</p>
+  <div>div4</div>
+  <span>span5(※span2番目の扱いのため指定される)</span>
+</div>
+  <hr>
+<p>nth-of-type(even)</p>
+<div class="type_wrap">
+    <span>span1</span>
+    <span>span2</span>
+    <p>p3</p>
+    <p>p4</p>
+    <div>div5</div>
+    <span>span6(※span3番目の扱いのため指定されない)</span>
+    <span>span7</span>
+</div>
+<hr>
+
+
+  </body>
+  </html>

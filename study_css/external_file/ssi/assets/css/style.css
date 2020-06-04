@@ -1,0 +1,110 @@
+li{
+    list-style-type:none;
+}
+body{
+    margin:0;
+    padding:0;
+    /* background-color:red; */
+}
+.clear{
+    clear:both;
+}
+.big{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.header{
+    height:417px;
+}
+.box1{
+    height:136px;
+}
+.imgArea{
+    display:inline-block;
+    float:left;
+}
+.headerTxt{
+    display:inline-block;
+    float:right;
+    margin:40px 45px 40px 0;
+    text-align:right;
+    font-weight:bold;
+    font-size:24px;
+}
+.box2{
+    background-image:url("../img/bg.gif");
+    height:279px;
+    position:relative;
+    
+}
+.threeChara{
+    position:absolute;
+    bottom:0;
+    left:300px;
+    z-index:10;
+}
+.textImg{
+    position:absolute;
+    top:0;
+    left:300px;
+    z-index:15;
+}
+
+.chara_imgArea{
+    display:inline-block;
+    float:left;
+}
+.chara_textArea{
+    float:left;
+    text-align:center;
+    width:60%;
+}
+
+.heartImg{
+    
+}
+.startImg{
+   
+  
+   
+}
+.box4{
+    text-align:center;
+}
+.voiceTxt{
+    font-size:32px;
+    margin-bottom:0;
+}
+.dateTxt{
+    font-size:32px;
+    font-weight:bold;
+    margin-top:0;
+}
+
+
+
+
+
+
+
+footer{
+    margin:0;
+    padding:0;
+    background-image:url("../img/bg.gif");
+    width:100%;
+    text-align:center;
+    height:200px;
+}
+
+.footerList li{
+    display:inline-block;
+    margin-top:40px;
+}
+.footerList li:before{
+    content:"/";
+}
+.footerList li:first-child:before{
+    content:"";
+}
+

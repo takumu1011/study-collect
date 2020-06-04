@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>list-style</title>
+  <style>
+.inside{
+  background-color: skyblue;
+  list-style-position: inside;
+}
+.outside{
+  background-color: skyblue;
+  list-style-position: outside;
+}
+li{
+  background-color: #ccc;
+}
+  </style>
+</head>
+<body>
+  <h1>list-style(ショートハンド)</h1>
+  <ul>
+    <li>list-style-type: disc</li>
+    <li>list-style-position: outside</li>
+    <li>list-style-image: none</li>
+  </ul>
+  <h2>継承あり(なので親要素ul,olに指定すればすべての子要素に適用される）</h2>
+  <p>list-style-imageが設定されている場合:list-style-typeは予備として使用される。</p>
+
+
+  <h3>list-style-position:inside/outside</h3>
+  <ul class="inside">
+    <li>インサイド</li>
+    <li>インサイド</li>
+    <li>インサイド</li>
+  </ul>
+  <ul class="outside">
+    <li>アウトサイド</li>
+    <li>アウトサイド</li>
+    <li>アウトサイド</li>
+  </ul>
+</body>
+</html>

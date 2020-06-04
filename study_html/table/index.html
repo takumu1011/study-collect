@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="ALL"><!-- noindex,nofollow -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<title>DEV TEMPLATE GULP</title>
+<meta name="description" content="">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta property="og:title" content="">
+<meta property="og:type" content="website"><!-- website, blog -->
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:determiner" content="タイトルの前に付く単語">
+<meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="">
+<meta name="twitter:site" content="@[Twitter ID]">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="mobile-web-app-capable" content="no">
+<link rel="canonical" href="サイトURL">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="stylesheet" href="./ assets / css / site.default.css">
+<link rel="stylesheet" href="./assets/css/site.top.css">
+<style>
+table,th,td{
+  background-color: #ccc;
+  border: 1px solid #000;
+}
+table{
+  margin: 20px 0;
+  width: 100%;
+}
+.separate{
+  border-collapse: separate;
+}
+.collapse{
+  border-collapse: collapse;
+  caption-side: bottom;
+}
+.fix_column{
+  width: 200px;
+}
+
+</style>
+</head>
+<body>
+  <h1>table</h1>
+  <ul>
+    <li>※captionは最初の子要素として配置しなければならない</li>
+
+
+<table class="separate">
+  <caption>border-collapse: separate</caption>
+  <thead>
+    <tr>
+      <th class="fix_column">品番（幅固定)</th>
+      <th>価格(税込み)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11500</td>
+      <td>￥200</td>
+    </tr>
+    <tr>
+      <td>20020</td>
+      <td>￥5000 ※変更の可能性あり</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>￥1200<br>
+        (先行購入: ￥800)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<table class="collapse">
+  <caption>border-collapse: collapse/caption-side: bottom</caption>
+  <thead>
+    <tr>
+      <th class="fix_column">品番(幅固定)</th>
+      <th>価格(税込み)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11500</td>
+      <td>￥200</td>
+    </tr>
+    <tr>
+      <td>20020</td>
+      <td>￥5000 ※変更の可能性あり</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>￥1200<br>
+        (先行購入: ￥800)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+</body>
+</html>

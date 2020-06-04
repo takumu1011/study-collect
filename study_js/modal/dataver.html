@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>DEV TEMPLATE GULP</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <style>
+    body {
+      background-color: #1ca480;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .5);
+    }
+
+    .modal_img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 500px;
+    }
+
+    .modal_mv {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      ;
+      height: 60%;
+    }
+
+    .close_btn {
+      position: absolute;
+      top: 50px;
+      right: 200px;
+      width: 70px;
+      height: 70px;
+      cursor: pointer;
+    }
+
+    .b_list li {
+      display: inline-block;
+      vertical-align: top;
+      width: 200px;
+      height: 230px;
+      margin: 10px 10px;
+      list-style-type: none;
+      background-color: pink;
+    }
+
+    .b_list li img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>data属性にソースを格納</h1>
+  <div class="modal">
+    <div class="close_btn">
+      <img src="img/btn_close.png" />
+    </div>
+  </div>
+
+  <div class="b_block">
+    <ul class="b_list">
+      <li data-img="img/soccer_l.jpg"><img src="img/soccer.png" /></li>
+      <li data-img="img/baseball_l.jpg"><img src="img/baseball.png" /></li>
+      <li data-img="img/dance_l.jpg"><img src="img/dance.png" /></li>
+      <li data-mv="https://www.youtube.com/embed/QNuKFjQZyAo"><img src="img/anime.png" /></li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script>
+    let flag = true;
+    //非表示
+    $('body').on('click', '.modal', function() {
+      if (flag == false) {
+        $('.modal_mv').attr('src', '');
+        $('.modal_mv,.modal_img').remove();
+        $('.modal,.close_btn').hide();
+        flag = true;
+      }
+    });
+
+    //表示
+    $('.b_list li').on('click', function() {
+      if (flag == true) {
+        $('.modal,.close_btn').show();
+        if ($(this).attr('data-mv') != undefined) {
+          let modal_mv = $(this).attr('data-mv');
+          $('.modal').append('<iframe class="modal_mv"></iframe>');
+          $('.modal_mv').attr('src', modal_mv);
+          flag = false;
+        } else {
+          let modal_img = $(this).attr('data-img');
+          $('.modal').append('<img class="modal_img" />');
+          $('.modal_img').attr('src', modal_img);
+          flag = false;
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

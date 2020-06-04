@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+
+body{
+  margin:0;
+  padding:0;
+  position:relative;
+  color:#a0522d;
+  font-size:16px;
+  font-family: 'Raleway', sans-serif;
+}
+img{
+  display:block;
+  width:100%;
+}
+ul{
+  margin:0;
+  padding:0;
+}
+li{
+  list-style-type:none;
+}
+a{
+  text-decoration:none;
+  color:#a0522d;
+}
+
+
+
+.wrapper{
+  width:1024px;
+  margin:0 auto;
+  overflow:hidden;
+}
+header{
+  margin:30px 0 10px;
+  width:100%;
+  position:relative;
+}
+.logoArea{
+  width:12%;
+  display:inline-block;
+  margin-left:80px;
+}
+.header_txtArea{
+  width:22%;
+  display:inline-block;
+  vertical-align:top;
+  float:right;
+  /* background-image:url("./../img/bg_icon01.png"); */
+}
+.header_txt_up, .header_txt_down{
+  font-size:22px;
+  font-weight:bold;
+  float:right;
+  margin:0;
+}
+.mainvisualArea{
+  clear:both;
+  max-width:100%;
+  height:200px;
+  background-image:url("./../img/bg.gif");
+  position:relative;
+  margin:10px 0 20px;
+}
+.main_chara{
+  position:absolute;
+  left:240px;
+  bottom:0;
+  width:540px;
+}
+.main_txt{
+  position:absolute;
+  top:0;
+  left:150px;
+}
+
+main{
+width:100%;
+margin:0 auto;
+padding-left:140px;
+position:relative;
+}
+.play_txt{
+  background:#ff1493;
+  color:#fff;
+  transform:rotate(-30deg);
+  width:240px;
+  position:absolute;
+  top:-50px;
+  left:-30px;
+  padding-left:50px;
+  z-index:-10;
+}
+.main_left{
+  width:50%;
+  display:inline-block;
+  box-sizing:border-box;
+  margin:0;
+}
+.main_right{
+  width:49%;
+  display:inline-block;
+  box-sizing:border-box;
+  margin:0;
+  vertical-align:top;
+}
+.chara_imgArea{
+  width:320px;
+  display:inline-block;
+}
+.vv_txt{
+  font-size:32px;
+  letter-spacing:3;
+}
+.heart_wrapper{
+  margin:0;
+  position:relative;
+}
+.heart_wrapper:hover{
+  opacity:0.8;
+}
+.heart_img{
+  width:110px;
+  padding-left:120px;
+}
+.arrow_img{
+  width:20px;
+  position:absolute;
+  top:30px;
+  left:167px;
+}
+.megumi_txt{
+  font-size:52px;
+}
+.megumi_txt p{
+  margin:0;
+}
+
+
+.centerTxt{
+  text-align:center;
+  margin:80px 0  80px -200px;
+  font-size:32px;
+}
+.date{
+  font-weight:bold;
+}
+.txt_area{
+  width:800px;
+}
+.txt_one{
+  margin:20px 0 40px;
+}
+.txt_two{
+  margin:40px 0 220px;
+}
+
+footer{
+  width:100%;
+  background-image:url("./../img/bg.gif");
+  padding:22px;
+  margin:220px 0 80px;
+  text-align:center;
+  font-size:14px;
+}
+.footer_list{
+  margin-bottom:32px;
+}
+.footer_list li{
+  display:inline-block;
+}
+.footer_list li::before{
+  content:"/";
+}
+.footer_list li:first-child::before{
+  content:none;
+}
+
+
+.disactive{
+  display:none;
+}
+
+@media screen  and (max-width:768px){
+  .wrapper{
+    width:100%;
+  }
+  .logoArea{
+    width:30%;
+    margin-left:20px;
+  }
+  .header_txtArea{
+    width:45%;
+  }
+  main{
+    width:100%;
+    padding-left:0px;
+  }
+  .main_left{
+    width:48%;
+    margin-top:20px;
+  }
+  .chara_imgArea{
+    width:100%;
+  }
+  .main_right{
+  }
+  .vv_txt{
+    font-size:16px;
+    text-align:center;
+  }
+  .heart_img{
+    padding:0;
+    margin:0 auto;
+  }
+  .arrow_img{
+    left:117px;
+  }
+  .megumi_txt{
+    font-size:42px;
+    padding-left:20px;
+  }
+  .centerTxt{
+    margin:0;
+  }
+  .txt_area{
+    width:85%;
+    margin:0 auto;
+  }
+  .footer_list, footer p{
+    width:85%;
+  }
+}

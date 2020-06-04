@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>anime.js</title>
+  <style>
+  .wrapper{
+    width:100%;
+    height:80vh;
+    margin:0;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+    border:1px solid blue;
+    background:lightblue;
+    color:#444;
+  }
+  .ball{
+    width:200px;
+    height:200px;
+    position:absolute;
+    top:20px;
+    bottom:0;
+    left:calc(50%-100px);
+    background:darkblue;
+    border-radius:50%;
+  }
+
+  </style>
+</head>
+<body>
+  <h1>anime.js</h1>
+<section class="wrapper">
+  <div class="ball">
+  </div>
+</section>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+<script>
+var bouncingBall=anime({
+  targets:'.ball',
+  translateY:'50vh',
+  duration:300,
+  loop:true,
+  direction:'alternate',
+  easing:'easeInCubic',
+  scaleX:{
+    value:1.05,
+    duration:150,
+    delay:268
+  }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>transition</title>
+  <style>
+  .wrapper{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .wrap{
+    margin:20px;
+  }
+  .box{
+    width:200px;
+    height:200px;
+    background:purple;
+  }
+  .box:hover{
+    background:blue;
+    opacity:0.5;
+  }
+  .wrap_second>.box{
+    transition:all 3s;
+  }
+  .wrap_third>.box{
+    transition:all 3s 2s;
+  }
+  .wrap_fourth>.box{
+    transition:all 3s 0s linear;
+  }
+  .wrap_fifth>.box{
+    transition:all 3s 0s ease-in;
+  }
+  .wrap_sixth>.box{
+    transition:all 3s 0s steps(6,end);
+  }
+  .wrap_seventh>.box{
+    transition:all 3s 0s ease-out;
+  }
+  .wrap_eighth>.box{
+    transition:all 3s 0s ease-in-out;
+  }
+  .wrap_ninth>.box{
+    transition:opacity 3s 0s;
+  }
+
+  .box-special{
+    width:200px;
+    height:200px;
+    background:#000;
+    transition:background 5s ease 1s;
+  }
+    .box-special:hover{
+    background:#00ffff;
+    transition:background 2s ease 0s;
+  }
+
+  </style>
+</head>
+<body>
+  <h1>trantition</h1>
+  <p><a href="https://q-az.net/mouse-hover-transition-or-animation/">animationとの違い</a></p>
+  <p><a href="https://easings.net/">easing</a></p>
+  <ul>
+    <li>transition-property:指定できないCSSプロパティもある(例：display:none)</li>
+    <li>transition-duration</li>
+    <li>transition-delay</li>
+    <li>transition-timing-function</li>
+  </ul>
+  <p>※ショートハンドの場合：durationを先に書く</p>
+  <p>一工程のアニメーション時に利用</p>
+  <p>ループがない</p>
+  <p>戻るアニメーションが自動でつく</p>
+  <p>トリガーが必要(hoverなど)</p>
+
+<div class="wrapper">
+  <div class="wrap_first wrap">
+    <div class="box">
+    </div>
+    <p>通常</p>
+  </div>
+
+  <div class="wrap_second wrap">
+    <div class="box">
+    </div>
+    <pre><code>
+      .wrap_second>.box{
+        transition:all 3s;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_third wrap">
+    <div class="box">
+    </div>
+    <pre><code>
+      .wrap_third>.box{
+        transition:all 3s 2s;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_fourth wrap">
+    <div class="box">
+    </div>
+    <p>linear:一定に変化</p>
+    <pre><code>
+      .wrap_fourth>.box{
+        transition:all 3s 0s linear;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_fifth wrap">
+    <div class="box">
+    </div>
+    <p>ease-in:開始ゆっくり</p>
+    <pre><code>
+      .wrap_fifth>.box{
+        transition:all 3s 0s ease-in;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_sixth wrap">
+    <div class="box">
+    </div>
+    <p>steps(数字,start or end)</p>
+    <pre><code>
+      .wrap_sixth>.box{
+        transition:all 3s 0s steps(6,end);
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_seventh wrap">
+    <div class="box">
+    </div>
+    <p>ease-out:終了ゆっくり</p>
+    <pre><code>
+      .wrap_seventh>.box{
+        transition:all 3s 0s ease-out;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_eighth wrap">
+    <div class="box">
+    </div>
+    <p>ease-in-out:開始と終了ゆっくり</p>
+    <pre><code>
+      .wrap_eigth>.box{
+        transition:all 3s 0s ease-in-out;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_ninth wrap">
+    <div class="box">
+    </div>
+    <p>opacityのみtransition</p>
+    <pre><code>
+      .wrap_ninth>.box{
+        transition:opacity 3s 0s ;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_tenth wrap">
+    <div class="box-special">
+    </div>
+    <p>どう動くか</p>
+    <pre><code>
+      .box-special{
+        width:200px;
+        height:200px;
+        background:#000;
+        transition:background 5s ease 1s; ←hoverを外した時に発動(ページロード時効果なし)
+      }
+      .box-special:hover{
+        background:#00ffff;
+        transition:background 2s ease 0s; ←hoverした時に発動
+      }
+    </code></pre>
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

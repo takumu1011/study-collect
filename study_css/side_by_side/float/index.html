@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="ALL"><!-- noindex,nofollow -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<title>横並び</title>
+<meta name="description" content="">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta property="og:title" content="">
+<meta property="og:type" content="website"><!-- website, blog -->
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:determiner" content="タイトルの前に付く単語">
+<meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="">
+<meta name="twitter:site" content="@[Twitter ID]">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="mobile-web-app-capable" content="no">
+<link rel="canonical" href="サイトURL">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="stylesheet" href="./ assets / css / site.default.css">
+<link rel="stylesheet" href="./assets/css/site.top.css">
+<style>
+
+.wrap{
+  width: 440px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ddd;
+}
+.inner{
+  width: 198px;
+  border: 1px solid #333;
+}
+.cb{
+  clear: both;
+}
+.fl{
+  float: left;
+}
+
+.list{
+  width: 400px;
+  height: 50px;
+  padding: 20px;
+  margin: 50px auto;
+  background-color: #ddd;
+  list-style-type: none;
+}
+.list li{
+  width: 98px;
+  border: 1px solid #333;
+  line-height: 30px;
+}
+.overflow{
+  overflow: hidden;
+  height: auto;
+  padding: 0;
+}
+.cf{
+  height: auto;
+  padding: 0;
+}
+.cf::after{
+  content: '';
+  display: block;
+}
+.cf::after{
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+  <h1>float (初期値: none)</h1>
+  <h2>※floatで高さを保持する方法</h2>
+  <div class="wrap">
+      <h2>元の形</h2>
+      <p class="inner">floatテキスト</p>
+      <p class="inner">floatテキスト</p>
+      <div>float解除</div>
+    </div>
+
+
+    <h2>子要素にclear:both</h2>
+    <ul>
+        <li>子要素が全てfloatしている場合には使えない</li>
+        <li>clear:bothを指定した要素はmargin-topとmargin-bottomが使用できない(paddingは可)</li>
+      </ul>
+  <div class="wrap">
+    <p class="inner fl">floatテキスト</p>
+    <p class="inner fl">floatテキスト</p>
+    <div class="cb">float解除</div>
+  </div>
+
+  <h2>親要素にheightやpaddingで高さを出す</h2>
+  <ul>
+    <li>親要素何のコンテンツが増えると指定した高さよりはみ出した部分が次のエリアに重なってしまう</li>
+  </ul>
+  <ul class="list">
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+    <li class="fl">リスト</li>
+  </ul>
+
+  <h2>親要素にoverflow:hidden</h2>
+  <ul>
+    <li>heightと違いコンテンツが増減しても高さを可変させることができる</li>
+    <li>要素がはみ出る場合に注意</li>
+  </ul>
+  <ul class="list overflow">
+      <li class="fl">リスト</li>
+      <li class="fl" style="height: 150px;">リスト</li>
+      <li class="fl">リスト</li>
+      <li class="fl">リスト</li>
+    </ul>
+　　
+    <h2>親要素にclearfix</h2>
+    <ul class="list cf">
+      <li class="fl">リスト</li>
+      <li class="fl">リスト</li>
+      <li class="fl">リスト</li>
+      <li class="fl">リスト</li>
+    </ul>
+
+  
+
+
+</body>
+</html>

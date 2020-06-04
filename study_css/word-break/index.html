@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <title>word-break/overflow-wrap(word-wrap)</title>
+    <style>
+        .sample0{
+            width: 150px;
+            background-color: #ccc;
+        }
+        .sample1{
+            width: 150px;
+            background-color: #ccc;
+            word-break: normal;
+        }
+        .sample2{
+            width: 150px;
+            background-color: #ccc;
+            word-break: break-all;
+        }
+        .sample3{
+            width: 150px;
+            background-color: #ccc;
+            word-break: keep-all;
+        }
+        .sample4{
+            width: 150px;
+            background-color: #ccc;
+            overflow-wrap: normal;
+        }
+        .sample5{
+            width: 150px;
+            background-color: #ccc;
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>word-break</h1>
+
+    <h2>word-break:normal(初期値)</h2>
+    <p class="sample1">英語等は単語の途中では改行せず、単語の切れ目で改行されます。日本語・中国語・韓国語等は表示範囲に合わせて改行されます。このため単語の途中で改行されることもあります。<br>
+        Default. Allows line breaking within words.
+    </p>
+    
+    <h2>word-break:break-all</h2>
+    <p class="sample2">言語に関係なく表示範囲に合わせて改行されます。このため単語の途中で改行されることもあります。
+        Behaves the same as normal for Asian text, yet allows the line to break arbitrarily for non-Asian text. This value is suited to Asian text that contains some excerpts of non-Asian text.
+    </p>
+    
+    <h2>word-break:keep-all</h2>
+    <p class="sample3">言語に関係なく単語の途中では改行せず、単語の切れ目で改行されます。
+        Does not allow word breaking for Chinese, Japanese, and Korean. Functions the same way as normal for all non-Asian languages. This value is optimized for text that includes small amounts of Chinese, Japanese, or Korean.
+    </p>
+    
+    <hr>
+
+    <h1>overflow-wrap(word-wrap)</h1>
+
+    <h2>overflow-wrap: normal(初期値)</h2>
+    <p>通常の単語の分割位置 (2つの単語の間の空白など) でのみ改行することを示します。</p>
+    <p class="sample4">
+        メリーポピンズの歌に｢世界で一番長い言葉はsupercalifragilisticexpialidocious｣という歌詞がありますが、この言葉は造語です。実在の単語ではfloccinaucinihilipilificationが最長で、意味は｢法的に無価値なものと見なすこと｣だそうです。
+    </p>
+
+    <h2>overflow-wrap: break-word</h2>
+    <p>行内にその他の分割可能な位置がない場合、通常は分割可能でない単語が任意の場所で分割されますが、コンテンツの最小固有寸法を計算する時に、単語分割によって導入された折り返し可能位置が考慮されません。</p>
+    <p class="sample5">
+        メリーポピンズの歌に｢世界で一番長い言葉はsupercalifragilisticexpialidocious｣という歌詞がありますが、この言葉は造語です。実在の単語ではfloccinaucinihilipilificationが最長で、意味は｢法的に無価値なものと見なすこと｣だそうです。
+    </p>
+
+
+</body>
+</html>

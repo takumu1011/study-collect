@@ -1,0 +1,10 @@
+body{
+  background:orange;
+  font-size:20px;
+}
+
+h1::after{
+  content:"style.cssとstyle-small.cssが読み込まれました。";
+  color:red;
+  font-size:42px;
+}

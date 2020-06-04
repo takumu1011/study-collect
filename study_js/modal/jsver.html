@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>DEV TEMPLATE GULP</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <style>
+    body {
+      background-color: #1ca480;
+    }
+
+    .modal{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.5);
+      cursor: pointer;
+    }
+    .modal_img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 500px;
+      height: 500px;
+      background-color: pink;
+    }
+    .close_btn{
+      position: absolute;
+      top: 50px;
+      right: 200px;
+      width: 70px;
+      height: 70px;
+    }
+
+
+    .b_list li {
+      display: inline-block;
+      vertical-align: top;
+      width: 200px;
+      margin: 0 10px;
+      list-style-type: none;
+      background-color: pink;
+    }
+
+    .b_list li img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Jsで配列にソースを格納</h1>
+
+
+
+  <div class="b_block">
+    <ul class="b_list">
+      <li><img src="img/soccer.png" /></li>
+      <li><img src="img/baseball.png" /></li>
+      <li><img src="img/dance.png" /></li>
+    </ul>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script>
+    let flag = true;
+    let array = ['img/soccer.png', 'img/baseball.png', 'img/dance.png'];
+    //クローズボタン
+    $(document).on('click','.modal',function(){
+      if(flag==false){
+      $('.modal').slideUp(2000,function(){flag=true;});
+    }
+    });
+    //モーダル
+    $('.b_list li').on('click', function() {
+      if (flag == true) {
+        let modal='<div class="modal"><img class="modal_img" /><div class="close_btn"><img src="img/btn_close.png" /></div></div>';
+        let index = $('.b_list li').index(this);
+        $('.b_block').before(modal);
+        $('.modal_img').attr('src', array[index]).hide().slideDown(1000,function(){flag=false;});
+      }
+    });
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="ALL">
+    <!-- noindex,nofollow -->
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <title>DEV TEMPLATE GULP</title>
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <!-- website, blog -->
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:determiner" content="タイトルの前に付く単語">
+    <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:site" content="@[Twitter ID]">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="mobile-web-app-capable" content="no">
+    <link rel="canonical" href="サイトURL">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="header"></header>
+    <section>
+        <h1>scriptで外部ファイル読み込み</h1>
+        <h2><a href="index.html">index.htmlへ</a></h2>
+    </section>
+    <footer id="footer"></footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
+        });
+    </script>
+</body>
+
+</html>

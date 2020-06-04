@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="ALL"><!-- noindex,nofollow -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<title>absolute</title>
+<meta name="description" content="">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta property="og:title" content="">
+<meta property="og:type" content="website"><!-- website, blog -->
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:determiner" content="タイトルの前に付く単語">
+<meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="">
+<meta name="twitter:site" content="@[Twitter ID]">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="mobile-web-app-capable" content="no">
+<link rel="canonical" href="サイトURL">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="stylesheet" href="./ assets / css / site.default.css">
+<link rel="stylesheet" href="./assets/css/site.top.css">
+<style>
+.box_parent{
+  position: relative;
+  background-color: #ccc;
+}
+.box_child_relative{
+  position: relative;
+  width: 500px;
+  height: 300px;
+}
+.box_child_absolute{
+  position: absolute;
+  width: 500px;
+  height: 300px;
+}
+.box_list{
+  position: relative;
+  margin: 50px 0;
+}
+.box_list--item{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: goldenrod;
+  border: 1px solid #fff;
+  list-style-type: none;
+}
+.box_list--item:nth-child(2){
+  position: absolute;
+  left: 30%;
+  background-color: #ccc;
+  text-align: right;
+}
+.center_pa{
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #ccc;
+}
+.center_ch{
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 200px;
+  margin: 0 auto;
+  background-color: #f00;
+}
+
+
+.j_pa{
+  position: relative;
+  width: 100%;
+  margin: 50px 0;
+  background-color: #ccc;
+}
+.j_ch{
+  position: absolute;
+  top: 20%;
+  width: 50%;
+}
+img{
+  display: block;
+  width: 100%;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body>
+  <h1>absolute</h1>
+  <ul>
+    <li>直近の親要素(static以外)が基準となる。ない場合body要素が基準</li>
+    <li>包含ブロックの高さがなくなる</li>
+    <li>他の要素のmarginと相殺されない</li>
+  </ul>
+  <p>高さがなくなった時の高さの出し方<br>
+    ・height<br>
+    ・padding-top(ブラウザの横幅を基準とした可変性)<br>
+    ・vh(ブラウザの縦幅を基準とした可変性)<br>
+    ・Js
+  </p>
+  <div class="box_parent">
+    <div class="box_child_relative">relative子要素</div>
+  </div>
+  <div class="box_parent">
+    <div class="box_child_absolute">absolute子要素(包含ブロックの高さがなくなっている。)</div>
+  </div>
+
+  <hr>
+  
+  <ul class="box_list">
+    <li class="box_list--item">1relative</li>
+    <li class="box_list--item">2absolute<br>(空間が作成されていない)</li>
+    <li class="box_list--item">3relative</li>
+    <li class="box_list--item">4relative</li>
+    <li class="box_list--item">5relative</li>
+  </ul>
+
+  <div class="center_pa">
+    left0 right0 margin0autoで中央寄せ
+    <div class="center_ch">absolute子要素</div>
+  </div>
+
+
+  <div class="j_pa" id="parent">
+      <div class="j_ch" id="children">jQueryで高さを出す<img src="./qr.png" alt=""></div>
+  </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script>
+  $(function(){
+     getH();
+    $(window).on('resize',function(){
+     getH();
+    });
+    function getH(){
+      var ch=$('#children').height();
+      $('#parent').height(ch);
+    }
+  });
+  </script>
+</body>
+</html>

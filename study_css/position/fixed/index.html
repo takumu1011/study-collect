@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="ALL"><!-- noindex,nofollow -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<title>fixed</title>
+<meta name="description" content="">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta property="og:title" content="">
+<meta property="og:type" content="website"><!-- website, blog -->
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:determiner" content="タイトルの前に付く単語">
+<meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="">
+<meta name="twitter:site" content="@[Twitter ID]">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="mobile-web-app-capable" content="no">
+<link rel="canonical" href="サイトURL">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="stylesheet" href="./ assets / css / site.default.css">
+<link rel="stylesheet" href="./assets/css/site.top.css">
+<style>
+.box_fixed_left{
+  position: fixed;
+  top: 80%;
+  left: 20%;
+  background-color: #f00;
+}
+.box_fixed_right{
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  background-color: #f00;
+}
+.transform_pa{
+  width: 200px;
+  height: 200px;
+  margin: 50px 50px;
+  background-color: #ccc;
+  transform: rotate(20deg);
+}
+.transform_ch{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f00;
+}
+</style>
+</head>
+<body>
+  <h1>fixed</h1>
+  <ul>
+    <li>親要素基準ではなくウインドウ基準</li>
+    <li>更新性のためにwrapの外かつz-index考慮してコードの下部に置くべき</li>
+    <li>祖先にtransform,perspective,filterがnone以外で定義されている時、祖先からの相対的位置になる</li>
+  </ul>
+  <div class="box_fixed_left">fixed_left要素(%指定)</div>
+  <div class="box_fixed_right">fixed_right要素(px指定)</div>
+
+  <div class="transform_pa">
+    <div class="transform_ch">transformが親のfix子要素</div>
+  </div>
+
+</body>
+</html>

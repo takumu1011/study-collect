@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>text-decoration</title>
+  <style>
+    body{
+      font-size: 22px;
+    }
+    .underline{
+      text-decoration: underline wavy red;
+    }
+    .overline{
+      text-decoration: overline;
+    }
+    .line-through{
+      text-decoration: line-through;
+    }
+    .combi{
+      text-decoration: underline line-through;
+    }
+    .stopline{
+      text-decoration: underline blue dotted;
+    }
+    .stopline span{
+      text-decoration: none;
+      color: red;
+    }
+    .stopline:nth-of-type(7) span{
+      text-decoration: line-through;
+    }
+    .stopline:nth-of-type(9) span{
+      text-decoration: underline red;
+    }
+  </style>
+</head>
+<body>
+  <h1>text-decoration(ショートハンド)</h1>
+  <h2>継承無し</h2>
+  <ul>
+    <li>text-decoration-color: currentcolor</li>
+    <li>text-decoration-style: solid</li>
+    <li>text-decoration-line: none</li>
+  </ul>
+  
+  <h3>text-decoration-lineの値</h3>
+  
+  <p class="underline">underline</p>
+  
+  <p class="overline">overline</p>
+  
+  <p class="line-through">line-through</p>
+  
+  <p class="combi">underline line-through</p>
+  
+  <p class="stopline">ここは下線<span>このテキストは下線NG</span>ここは下線</p>
+  <p><small>※上記のテキストNGエリアではtext-decoration: noneが指定してあるが装飾を外すことはできない</small></p>
+  
+  <p class="stopline">ここは下線<span>このテキストは下線NG</span>ここは下線</p>
+  <p><small>※上記のテキストNGエリアではtext-decoration: line-throughが指定してあるがunderlineを消すことなく装飾を追加している</small></p>
+  
+  <p class="stopline">ここは下線<span>このテキストは下線NG</span>ここは下線</p>
+  <p><small>※上記のテキストNGエリアではtext-decoration: underline redが指定してあるがunderlineの色を上書きしている</small></p>
+  
+</body>
+</html>

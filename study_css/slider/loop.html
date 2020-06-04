@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>DEV TEMPLATE GULP</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <style>
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .slider_block {
+      margin: 0 auto;
+      background-color: skyblue;
+      width: 720px;
+      overflow: hidden;
+    }
+
+    .left_btn {
+      position: absolute;
+      top: 260px;
+      left: 50%;
+      transform: translateX(-470px);
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+    }
+
+    .right_btn {
+      position: absolute;
+      top: 260px;
+      right: 50%;
+      transform: translateX(470px);
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+    }
+
+    .slider_con {
+      position: relative;
+      left: -1200px;
+      width: 3600px;
+    }
+
+    .slider_con::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .slider_list {
+      position: relative;
+      display: inline-block;
+      width: 1200px;
+      font-size: 0;
+      float: left;
+    }
+
+    li {
+      position: relative;
+      font-size: 16px;
+      width: 200px;
+      padding: 20px;
+      list-style-type: none;
+      vertical-align: top;
+      display: inline-block;
+      float: left;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>連打防止無限ループスライダー</h1>
+  <p>連打防止：フラッグで判別</p>
+  <p>無限ループ：見えないところで元の位置に移動</p>
+
+
+
+  <div class="left_btn">
+    <img src="img/left_btn.png" />
+  </div>
+  <div class="right_btn">
+    <img src="img/right_btn.png" />
+  </div>
+  <div class="slider_block">
+    <div class="slider_con">
+      <ul class="slider_list">
+        <li><img src="img/car1.png" /></li>
+        <li><img src="img/car2.png" /></li>
+        <li><img src="img/car3.png" /></li>
+        <li><img src="img/car4.png" /></li>
+        <li><img src="img/car5.png" /></li>
+      </ul>
+      <ul class="slider_list">
+        <li><img src="img/car1.png" /></li>
+        <li><img src="img/car2.png" /></li>
+        <li><img src="img/car3.png" /></li>
+        <li><img src="img/car4.png" /></li>
+        <li><img src="img/car5.png" /></li>
+      </ul>
+      <ul class="slider_list">
+        <li><img src="img/car1.png" /></li>
+        <li><img src="img/car2.png" /></li>
+        <li><img src="img/car3.png" /></li>
+        <li><img src="img/car4.png" /></li>
+        <li><img src="img/car5.png" /></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script>
+    let click_flag = true;
+    let count = 0;
+
+    // console.log($('.slider_con').css('left'));
+
+    //左ボタン
+    $('.left_btn').on('click', function() {
+      //click_flag有効なら
+      if (click_flag) {
+        //無効にする
+        click_flag = false;
+        //実行
+        $('.slider_con').animate({
+          'left': '-=240px'
+        }, 1000, function() {
+          //アニメーション終了後有効にする
+          click_flag = true;
+          // console.log($('.slider_con').css('left'));
+          if ($('.slider_con').css('left') == '-2400px') {
+            $('.slider_con').css({
+              'left': '+=1200px'
+            });
+          }
+        });
+      }
+    });
+
+    //右ボタン
+    $('.right_btn').on('click', function() {
+      //click_flag有効なら
+      if (click_flag) {
+        //無効にする
+        click_flag = false;
+        //実行
+        $('.slider_con').animate({
+          'left': '+=240px'
+        }, 1000, function() {
+          //アニメーション終了後有効にする
+          click_flag = true;
+          // console.log($('.slider_con').css('left'));
+          if ($('.slider_con').css('left') == '0px') {
+            $('.slider_con').css({
+              'left': '-=1200px'
+            });
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

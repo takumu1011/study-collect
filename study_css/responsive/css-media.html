@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>CSSでメディアクエリ</title>
+  <style>
+  body{
+    background:skyblue;
+  }
+  pre{
+    font-size:22px;
+  }
+
+  @media screen and (max-width:768px){
+    body{
+      background:orange;
+    }
+    h1{
+      font-size:12px;
+    }
+    h1::after{
+      content:"メディアクエリが適用されました。";
+      color:red;
+      font-size:40px;
+    }
+  }
+
+
+
+  </style>
+</head>
+<body>
+
+<h1>CSSでメディアクエリ-ブレイクポイント768px-</h1>
+
+<pre><code>
+  body{
+    background:skyblue;
+  }
+
+  @media screen and (max-width:768px){
+    body{
+      background:orange;
+    }
+    h1{
+      font-size:12px;
+    }
+    h1::after{
+      content:"メディアクエリが適用されました。";
+      color:red;
+      font-size:40px;
+    }
+  }
+</code></pre>
+
+<div="mdn_link">
+  <a href="https://developer.mozilla.org/ja/docs/Web/CSS/@media#Media_types" target="_blank">
+    @media-MDN-
+  </a>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

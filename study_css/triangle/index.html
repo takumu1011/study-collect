@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>DEV TEMPLATE GULP</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="stylesheet" href="./ assets / css / site.default.css">
+  <link rel="stylesheet" href="./assets/css/site.top.css">
+  <style>
+    .wrap{
+      display: flex;
+      margin: 50px 0;
+    }
+    .triangle_first{
+      width: 100px;
+      height: 100px;
+      border-top: 50px solid #F0897F;
+      border-right: 50px solid #f6da69;
+      border-bottom: 50px solid #b2ce54;
+      border-left: 50px solid #6aa7cd;
+    }
+    .triangle_second{
+      width: 0;
+      height: 0;
+      border-top: 50px solid #F0897F;
+      border-right: 50px solid #f6da69;
+      border-bottom: 50px solid #b2ce54;
+      border-left: 50px solid #6aa7cd;
+    }
+    .triangle_third{
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid #b2ce54;
+      border-left: 50px solid transparent;
+    }
+    .triangle_fourth{
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid #b2ce54;
+      border-left: 250px solid transparent;
+    }
+    .triangle_fifth{
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-right: 250px solid transparent;
+      border-bottom: 50px solid #b2ce54;
+      border-left: 250px solid transparent;
+    }
+    .triangle_sixth{
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-right: 250px solid transparent;
+      border-bottom: 250px solid #b2ce54;
+      border-left: 250px solid transparent;
+    }
+    .triangle_seventh{
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-right: 250px solid transparent;
+      border-bottom: 250px solid #b2ce54;
+      border-left: 250px solid transparent;
+      transform: rotateZ(180deg);
+    }
+    span{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>三角形の作り方</h1>
+  <p><a href="https://www.granfairs.com/blog/staff/make-triangle-with-css">参考</a></p>
+  <div class="wrap">
+    <div class="triangle_first"></div>
+    <pre>
+      <code>
+        <span>
+        .triangle_first{
+          width: 100px;
+          height: 100px;
+          border-top: 50px solid #F0897F;
+          border-right: 50px solid #f6da69;
+          border-bottom: 50px solid #b2ce54;
+          border-left: 50px solid #6aa7cd;
+        }
+      </span>
+      </code>
+    </pre>
+  </div>
+  <div class="wrap">
+    <div class="triangle_second"></div>
+    <pre>
+      <code>
+        .triangle_second{
+          <span>
+          width: 0;
+          height: 0;
+          </span>
+          border-top: 50px solid #F0897F;
+          border-right: 50px solid #f6da69;
+          border-bottom: 50px solid #b2ce54;
+          border-left: 50px solid #6aa7cd;
+        }
+      </code>
+    </pre>
+  </div>
+  
+  <div class="wrap">
+    <div class="triangle_third"></div>
+    <pre>
+      <code>
+        .triangle_third{
+          width: 0;
+          height: 0;
+          <span>
+          border-top: 50px solid transparent;
+          border-right: 50px solid transparent;
+          border-bottom: 50px solid #b2ce54;
+          border-left: 50px solid transparent;
+          </span>
+        }
+      </code>
+    </pre>
+  </div>
+
+  <div class="wrap">
+      <div class="triangle_fourth"></div>
+      <pre>
+        <code>
+          .triangle_third{
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 50px solid #b2ce54;
+            <span>
+            border-left: 250px solid transparent;
+            </span>
+          }
+        </code>
+      </pre>
+    </div>
+
+    <div class="wrap">
+        <div class="triangle_fifth"></div>
+        <pre>
+          <code>
+            .triangle_third{
+              width: 0;
+              height: 0;
+              border-top: 50px solid transparent;
+              <span>
+              border-right: 250px solid transparent;
+              </span>
+              border-bottom: 50px solid #b2ce54;
+              border-left: 250px solid transparent;
+            }
+          </code>
+        </pre>
+      </div>
+
+      <div class="wrap">
+          <div class="triangle_sixth"></div>
+          <pre>
+            <code>
+              .triangle_third{
+                width: 0;
+                height: 0;
+                border-top: 50px solid transparent;
+                border-right: 250px solid transparent;
+                <span>
+                border-bottom: 250px solid #b2ce54;
+                </span>
+                border-left: 250px solid transparent;
+              }
+            </code>
+          </pre>
+        </div>
+
+        <div class="wrap">
+            <div class="triangle_seventh"></div>
+            <pre>
+              <code>
+                .triangle_third{
+                  width: 0;
+                  height: 0;
+                  border-top: 50px solid transparent;
+                  border-right: 250px solid transparent;
+                  border-bottom: 250px solid #b2ce54;
+                  border-left: 250px solid transparent;
+                  <span>
+                  transform: rotate(180deg);
+                    ※transformを使わず3段階目で三角形の向きを決めるのも可
+                  </span>
+                }
+              </code>
+            </pre>
+          </div>
+
+</body>
+</html>

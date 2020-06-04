@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>velocity.js</title>
+  <style>
+
+  .el{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:pink;
+  }
+  </style>
+</head>
+<body>
+  <h1>velocity.js</h1>
+  <div class="el"></div>
+
+  <pre><code>
+    $('.el').velocity({
+      opacity:0.5,
+      width:'200px'
+    },{
+      duration:1000,
+      loop:true
+      }
+    );
+  </code></pre>
+
+
+
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.js"></script>
+
+<script>
+$('.el').velocity({
+  opacity:0.5,
+  width:'200px'
+},{
+  duration:1000,
+  loop:true
+  }
+);
+</script>
+</body>
+</html>

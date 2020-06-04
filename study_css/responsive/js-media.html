@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Jsでレスポンシブ実装</title>
+  <style>
+  pre{
+    font-size:24px;
+  }
+  </style>
+</head>
+<body>
+<h1>Jsでレスポンシブ実装</h1>
+
+<pre><code>
+  var body=document.querySelector("body");
+  var handleWindowResize=function(){
+  if(window.matchMedia("(min-width:768px)").matches){
+
+    body.style.backgroundColor="red";
+  }else{
+    body.style.backgroundColor="skyblue";
+  }
+};
+handleWindowResize();
+
+window.addEventListener('resize',function(){
+  handleWindowResize();
+});
+</code></pre>
+
+
+
+
+
+<script>
+  var body=document.querySelector("body");
+  var handleWindowResize=function(){
+  if(window.matchMedia("(min-width:768px)").matches){
+
+    body.style.backgroundColor="red";
+  }else{
+    body.style.backgroundColor="skyblue";
+  }
+};
+handleWindowResize();
+
+window.addEventListener('resize',function(){
+  handleWindowResize();
+});
+
+
+
+</script>
+
+</body>
+</html>

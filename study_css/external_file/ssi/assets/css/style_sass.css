@@ -1,0 +1,331 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: #a0522d;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+body img {
+  display: block;
+  width: 100%;
+}
+
+body ul {
+  margin: 0;
+  padding: 0;
+}
+
+body li {
+  list-style-type: none;
+}
+
+body a {
+  text-decoration: none;
+  color: #a0522d;
+}
+
+body .disactive {
+  display: none;
+}
+
+body .pc_layout {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.6;
+}
+
+body .sp_layout {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.6;
+}
+
+.wrapper {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+  width: 100%;
+}
+
+header .logoArea {
+  display: inline-block;
+  width: 150px;
+  padding: 35px 0 25px 155px;
+}
+
+header .header_txtArea {
+  float: right;
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+  height: 70px;
+  padding: 35px 140px 35px 0;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 7px;
+}
+
+header .header_txtArea .header_txt_down,
+header .header_txtArea .header_txt_up {
+  margin: 0;
+}
+
+.mainvisualArea {
+  clear: both;
+  position: relative;
+  width: 100%;
+  height: 270px;
+  background-image: url(../img/bg.gif);
+}
+
+.mainvisualArea .main_chara {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-310px);
+  width: 680px;
+}
+
+.mainvisualArea .main_txt {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-370px);
+  width: 740px;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main .play_txt {
+  position: absolute;
+  top: 10px;
+  left: -100px;
+  z-index: -1;
+  transform: rotate(-30deg);
+  width: 400px;
+  background: #ff1493;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+}
+
+main .main_left {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+main .main_left .chara_imgArea {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: -2;
+  transform: translateX(-380px);
+}
+
+main .main_right {
+  position: absolute;
+  top: 60px;
+  right: 50%;
+  transform: translateX(385px);
+}
+
+main .main_right .vv_txt {
+  font-size: 32px;
+  letter-spacing: 3;
+}
+
+main .main_right .heart_wrapper {
+  position: relative;
+}
+
+main .main_right .heart_wrapper:hover {
+  opacity: 0.8;
+}
+
+main .main_right .heart_wrapper .heart_img {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  width: 135px;
+}
+
+main .main_right .heart_wrapper .arrow_img {
+  position: absolute;
+  top: 45px;
+  left: 135px;
+  width: 15px;
+}
+
+main .main_right .megumi_txt {
+  margin: 185px 0 0 35px;
+  line-height: 1.5em;
+  letter-spacing: 11px;
+  font-size: 38px;
+}
+
+main .centerTxt {
+  margin: 620px auto 60px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 2em;
+}
+
+main .centerTxt .date {
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+main .txt_area {
+  width: 700px;
+  margin: 0 auto;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  line-height: 2em;
+}
+
+main .txt_area .txt_one {
+  margin: 20px 0 0 20px;
+}
+
+main .txt_area .txt_two {
+  margin: 65px 0 0 20px;
+}
+
+footer {
+  width: 100%;
+  margin: 230px 0 0;
+  padding: 32px 0 60px;
+  background-image: url(../img/bg.gif);
+  text-align: center;
+  font-size: 12px;
+}
+
+footer .footer_list {
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+footer .footer_list li {
+  display: inline-block;
+}
+
+footer .footer_list li::before {
+  content: "/";
+}
+
+footer .footer_list li:first-child::before {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+    height: 70px;
+  }
+  header .logoArea {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-170px);
+    width: 80px;
+    padding: 0;
+  }
+  header .header_txtArea {
+    float: none;
+    position: absolute;
+    top: 17px;
+    right: 50%;
+    transform: translateX(168px);
+    width: 180px;
+    height: 40px;
+    padding: 0;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  .mainvisualArea {
+    width: 100%;
+    height: 140px;
+  }
+  .mainvisualArea .main_chara {
+    transform: translateX(-188px);
+    width: 370px;
+  }
+  .mainvisualArea .main_txt {
+    transform: translateX(-185px);
+    width: 370px;
+  }
+  main {
+    width: 100%;
+  }
+  main .play_txt {
+    top: -5px;
+    left: -30px;
+    width: 140px;
+    font-size: 13px;
+  }
+  main .main_left .chara_imgArea {
+    top: 20px;
+    transform: translateX(-168px);
+    width: 185px;
+  }
+  main .main_right {
+    top: 42px;
+    transform: translateX(150px);
+  }
+  main .main_right .vv_txt {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  main .main_right .heart_wrapper .heart_img {
+    left: 22px;
+    width: 70px;
+  }
+  main .main_right .heart_wrapper .arrow_img {
+    top: 24px;
+    left: 53px;
+    width: 12px;
+  }
+  main .main_right .megumi_txt {
+    margin: 90px 0 0 15px;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: 2px;
+  }
+  main .centerTxt {
+    margin: 314px 0 37px;
+    font-size: 14px;
+    line-height: 1.8em;
+  }
+  main .centerTxt .date {
+    letter-spacing: 1.5px;
+  }
+  main .txt_area {
+    width: auto;
+    font-size: 13px;
+    letter-spacing: 1.9px;
+    line-height: 1.9em;
+  }
+  main .txt_area .txt_two {
+    margin: 23px 0 0 20px;
+  }
+  footer {
+    margin: 135px 0 0;
+  }
+}

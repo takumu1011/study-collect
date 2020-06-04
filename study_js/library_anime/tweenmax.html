@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>tweenmax</title>
+  <style>
+  body{
+    padding:20px;
+    background:#eee;
+  }
+  .animArea{
+    position:relative;
+    height:124px;
+    margin-bottom:5px;
+    border:2px solid #ccc;
+    background:#fff;
+  }
+  .animItem{
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:100px;
+    height:100px;
+    background:#ff0000;
+  }
+</style>
+</head>
+<body>
+  <h1>tweenmax</h1>
+  <div class="animArea">
+    <div class="animItem" id="anim"></div>
+  </div>
+  <p><button id="start" class="btn btn-info">アニメーション実行</button></p>
+
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script>
+$('#start').on('click',function(){
+  TweenMax.to('#anim',2,{
+    css:{
+      left:'200px',
+      background:'#0000ff',
+      opacity:0.3,
+      rotation:360
+    }
+  })
+});
+
+
+</script>
+</body>
+</html>

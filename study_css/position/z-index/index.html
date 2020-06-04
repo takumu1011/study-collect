@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>z-index</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="stylesheet" href="./ assets / css / site.default.css">
+  <link rel="stylesheet" href="./assets/css/site.top.css">
+  <style>
+    .wrap_static{
+      display:inline-block;
+      width:40%;
+      vertical-align:top;
+    }
+    .wrap_z-index{
+      display:inline-block;
+      width:40%;
+      vertical-align:top;
+    }
+    .box1{
+      width:200px;
+      height:200px;
+      background:skyblue;
+    }
+    .box2{
+      width:300px;
+      height:300px;
+      background:green;
+      margin-top:-100px;
+    }
+    .box3{
+      width:400px;
+      height:200px;
+      background:orange;
+      margin-top:-130px;
+    }
+    .box4{
+      position:relative;
+      width:200px;
+      height:200px;
+      background:red;
+    }
+    .box5{
+      position:relative;
+      width:300px;
+      height:300px;
+      background:purple;
+      margin-top:-70px;
+      z-index:1;
+    }
+    .box6{
+      position:relative;
+      width:200px;
+      height:300px;
+      background:pink;
+      margin-top:-60px;
+    }
+
+
+    .objects{
+      position: relative;
+      margin: 50px 0;
+    }
+    .obj{
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+    }
+    .obj2{
+      position: absolute;
+      top: 40px;
+      left: 10px;
+      width: 200px;
+      height: 200px;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>z-index</h1>
+  <ul>
+    <li>数字が大きいほど上になる。</li>
+    <li>通常は上に書かれたものが奥、下になるほど手前に重なっていく。</li>
+    <li>position:staticには使えない。</li>
+    <li>初期値はauto(親要素と同じ階層に表示される。)</li>
+    <li>z-indexを指定しなくてもstatic要素よりrelative要素が上になる。</li>
+  </ul>
+  <div class="wrap_static">
+    <h2>通常</h2>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+  </div>
+  <div class="wrap_z-index">
+    <h2>z-indexを使用</h2>
+    <div class="box4">box4</div>
+    <div class="box5">box5<br>
+      <pre><code>
+        position:relative;
+        width:300px;
+        height:300px;
+        background:purple;
+        margin-top:-70px;
+        z-index:1;
+      </code></pre>
+    </div>
+    <div class="box6">box6</div>
+  </div>
+
+
+  <div class="objects">
+    <div class="obj">
+    </div>
+    <div class="obj2">
+    </div>
+  </div>
+</body>
+</html>

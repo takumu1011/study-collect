@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="ALL">
+    <!-- noindex,nofollow -->
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <title>DEV TEMPLATE GULP</title>
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <!-- website, blog -->
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:determiner" content="タイトルの前に付く単語">
+    <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:site" content="@[Twitter ID]">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="mobile-web-app-capable" content="no">
+    <link rel="canonical" href="サイトURL">
+    <!-- <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="stylesheet" href="./ assets / css / site.default.css">
+    <link rel="stylesheet" href="./assets/css/site.top.css"> -->
+
+    <style>
+        .chara_list li {
+            list-style-type: none;
+        }
+        
+        pre {
+            background-color: yellow;
+            border-top: 5px solid #000;
+            border-bottom: 5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ajaxで読み取り</h1>
+    <pre>
+        <code>
+        &lt;script&gt;
+                $(function() {
+                    //html読み込み
+                    $('#button').on('click', function() {
+                        $.ajax({
+                            url: 'sample2.html',
+                            dataType: 'html',
+                            success: function(data) {
+                                $('#text').html(data);
+                            },
+                            error: function(data) {
+                                alert('エラー');
+                            }
+                        });
+                    });
+                    //json読み込み
+                    $('#button2').on('click', function() {
+                        $.ajax({
+                            url: 'sample3.json',
+                            dataType: 'json',
+                            success: function(data) {
+                                if (!$('.chara_list').length) {
+                                    for (var i in data) {
+                                        var ele = data[i];
+        
+                                        if (ele.name == undefined) ele.name = '【不明】';
+                                        if (ele.age == undefined) ele.age = '【不明】';
+                                        if (ele.tel == undefined) ele.tel = '【不明】';
+                                        if (ele.type == undefined) ele.type = '【不明】';
+                                        var name = '&lt;li class="name"&gt;名前：' + ele.name + '&lt;/li&gt;';
+                                        var age = '&lt;li class="age"&gt;年齢：' + ele.age + '&lt;/li&gt;';
+                                        var tel = '&lt;li class="tel"&gt;電話番号：' + ele.tel + '&lt;/li&gt;';
+                                        var type = '&lt;li class="type"&gt;属性：' + ele.type + '&lt;/li&gt;';
+                                        var data_list = '&lt;ul class="chara_list"&gt;' + name + age + tel + type + '&lt;/ul&gt;';
+                                        $('#chara').append(data_list);
+                                    }
+                                }
+                            },
+                            error: function(data) {
+                                alert('エラー');
+                            }
+                        });
+                    });
+                });
+            &lt;/script&gt;
+        </code>
+    </pre>
+    <input type="button" id="button" value="Sample2.html読み込み"><br>
+    <input type="button" id="button2" value="Sample3.json読み込み">
+    <div id="text"></div>
+    <div id="chara"></div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            //html読み込み
+            $('#button').on('click', function() {
+                $.ajax({
+                    url: 'sample2.html',
+                    dataType: 'html',
+                    success: function(data) {
+                        $('#text').html(data);
+                    },
+                    error: function(data) {
+                        alert('エラー');
+                    }
+                });
+            });
+            //json読み込み
+            $('#button2').on('click', function() {
+                $.ajax({
+                    url: 'sample3.json',
+                    dataType: 'json',
+                    success: function(data) {
+                        if (!$('.chara_list').length) {
+                            for (var i in data) {
+                                var ele = data[i];
+
+                                if (ele.name == undefined) ele.name = '【不明】';
+                                if (ele.age == undefined) ele.age = '【不明】';
+                                if (ele.tel == undefined) ele.tel = '【不明】';
+                                if (ele.type == undefined) ele.type = '【不明】';
+                                var name = '<li class="name">名前：' + ele.name + '</li>';
+                                var age = '<li class="age">年齢：' + ele.age + '</li>';
+                                var tel = '<li class="tel">電話番号：' + ele.tel + '</li>';
+                                var type = '<li class="type">属性：' + ele.type + '</li>';
+                                var data_list = '<ul class="chara_list">' + name + age + tel + type + '</ul>';
+                                $('#chara').append(data_list);
+                            }
+                        }
+                    },
+                    error: function(data) {
+                        alert('エラー');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

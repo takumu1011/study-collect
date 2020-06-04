@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="ALL"><!-- noindex,nofollow -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<title>sticky</title>
+<meta name="description" content="">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta property="og:title" content="">
+<meta property="og:type" content="website"><!-- website, blog -->
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:determiner" content="タイトルの前に付く単語">
+<meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="">
+<meta name="twitter:site" content="@[Twitter ID]">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="mobile-web-app-capable" content="no">
+<link rel="canonical" href="サイトURL">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="stylesheet" href="./ assets / css / site.default.css">
+<link rel="stylesheet" href="./assets/css/site.top.css">
+<style>
+   body{
+      margin:0;
+    }
+    .block{
+      width:100%;
+      height:100vh;
+      position:sticky;
+      top:0;
+    }
+    .fixArea{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translateX(-50%) translateY(-50%);
+      z-index:1000;
+      font-size:32px;
+      font-weight:bold;
+      border:3px solid #fff;
+    }
+
+    .block-one{
+      background:red;
+      z-index:100;
+    }
+    .block-two{
+      background:skyblue;
+      z-index:200;
+    }
+    .block-three{
+      background:yellow;
+      z-index:300;
+    }
+    .block-four{
+      background:orange;
+      z-index:400;
+    }
+    .block-five{
+      background:green;
+      z-index:500;
+    }
+</style>
+</head>
+<body>
+  <h1>sticky</h1>
+  <ul>
+    <li>relativeから特定の位置に達した時fixedに変わるイメージ</li>
+    <li>親や先祖要素にoverflow:hidden,scroll,autoが使われているとうまく動作しない。</li>
+    <li>IEに対応していないためjsで対応</li>
+  </ul>
+
+
+<div class="block block-one">
+  <pre><code>
+    .block-one{
+      background:red;
+      z-index:100;
+    }
+  </code></pre>
+</div>
+<div class="block block-two">
+  <pre><code>
+    .block-two{
+      background:skyblue;
+      z-index:200;
+    }
+  </code></pre>
+</div>
+<div class="block block-three">
+  <pre><code>
+    .block-three{
+      background:yellow;
+      z-index:300;
+    }
+  </code></pre>
+</div>
+<div class="block block-four">
+  <pre><code>
+    .block-foour{
+      background:orange;
+      z-index:400;
+    }
+  </code></pre>
+</div>
+<div class="block block-five">
+  <pre><code>
+    .block-five{
+      background:green;
+      z-index:500;
+    }
+  </code></pre>
+</div>
+
+<div class="fixArea">
+  <pre><code>
+    .block{
+      width:100%;
+      height:100vh;
+      position:sticky;
+      top:0;
+    }
+  </code></pre>
+</div>
+
+</body>
+</html>

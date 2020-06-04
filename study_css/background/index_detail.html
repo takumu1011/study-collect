@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>background-size</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="stylesheet" href="./ assets / css / site.default.css">
+  <link rel="stylesheet" href="./assets/css/site.top.css">
+  <style>
+    
+    .nav_wrap{
+      border: 5px solid brown;
+    }
+    .nav_list{
+      list-style-type: none;
+    }
+    a{
+      color: brown;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 2em;
+    }
+    .pgtop{
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      width: 100px;
+      background-color: skyblue;
+      border: 1px solid #000;
+      border-radius: 20px;
+    }
+    .pgtop a{
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 20px 0;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      transition: opacity 100ms ease-out 0s;
+    }
+    .pgtop a:hover{
+      opacity: 0.5;
+    }
+    
+    .wrap{
+      display: flex;
+      margin: 50px 0;
+    }
+    .contain1{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: contain;
+      width: 1000px;
+      height: 500px;
+    }
+    .contain2{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: contain;
+      width: 500px;
+      height: 1000px;
+    }
+    .contain3{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: contain;
+      width: 500px;
+      height: 500px;
+    }
+    .contain4{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: contain;
+      width: 30%;
+      height: 500px;
+    }
+    .cover1{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: cover;
+      width: 1000px;
+      height: 500px;
+    }
+    .cover2{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: cover;
+      width: 500px;
+      height: 1000px;
+    }
+    .cover3{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: cover;
+      width: 500px;
+      height: 500px;
+    }
+    .cover4{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: cover;
+      width: 30%;
+      height: 500px;
+    }
+    .auto_auto1{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto auto;
+      width: 1000px;
+      height: 500px;
+    }
+    .auto_auto2{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto auto;
+      width: 500px;
+      height: 1000px;
+    }
+    .auto_auto3{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto auto;
+      width: 500px;
+      height: 500px;
+    }
+    .auto_auto4{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto auto;
+      width: 30%;
+      height: 500px;
+    }
+    .auto_1001{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto 100%;
+      width: 1000px;
+      height: 500px;
+    }
+    .auto_1002{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto 100%;
+      width: 500px;
+      height: 1000px;
+    }
+    .auto_1003{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto 100%;
+      width: 500px;
+      height: 500px;
+    }
+    .auto_1004{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: auto 100%;
+      width: 30%;
+      height: 500px;
+    }
+    ._100_auto1{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% auto;
+      width: 1000px;
+      height: 500px;
+    }
+    ._100_auto2{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% auto;
+      width: 500px;
+      height: 1000px;
+    }
+    ._100_auto3{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% auto;
+      width: 500px;
+      height: 500px;
+    }
+    ._100_auto4{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% auto;
+      width: 30%;
+      height: 500px;
+    }
+    ._100_1001{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% 100%;
+      width: 1000px;
+      height: 500px;
+    }
+    ._100_1002{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% 100%;
+      width: 500px;
+      height: 1000px;
+    }
+    ._100_1003{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% 100%;
+      width: 500px;
+      height: 500px;
+    }
+    ._100_1004{
+      background: url(bnr.png) no-repeat top center #ccc;
+      background-size: 100% 100%;
+      width: 30%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pgtop">
+    <a href="#">TOPへ</a>
+  </div>
+  <h1>background-size</h1>
+  <div class="nav_wrap">
+    <p>元画像：600✖600</p>
+    <ul class="nav_list">
+      <li class="nav_list--item"><a href="#contain">★contain</a></li>
+      <li class="nav_list--item"><a href="#cover">★cover</a></li>
+      <li class="nav_list--item"><a href="#auto_auto">★auto auto</a></li>
+      <li class="nav_list--item"><a href="#auto_100">★auto 100%</a></li>
+      <li class="nav_list--item"><a href="#_100_auto">★100% auto</a></li>
+      <li class="nav_list--item"><a href="#_100_100">★100% 100%</a></li>
+    </div>
+    <div class="imgtag">
+      <p>imgタグで表示</p>
+      <img src="bnr.png" alt="">
+    </div>
+    
+    <h1 id="contain">★contain</h1>
+    <h2>この画像の場合containは小さい辺にFit</h2>
+    <div class="wrap">
+      <div class="contain1"></div>
+      <div class="contain1_txt">
+        　contain<br>
+        1000✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="contain2"></div>
+      <div class="contain2_txt">
+        contain<br>
+        500✖1000<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="contain3"></div>
+      <div class="contain3_txt">
+        contain<br>
+        500✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="contain4"></div>
+      <div class="contain4_txt">
+        contain<br>
+        30%✖500<br>
+      </div>
+    </div>
+    <!------------------------------------------------------------>
+    <h1 id="cover">★cover</h1>
+    <h2>この画像の場合coverは長い辺にFit</h2>
+    <div class="wrap">
+      <div class="cover1"></div>
+      <div class="cover1_txt">
+        cover<br>
+        1000✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cover2"></div>
+      <div class="cover2_txt">
+        cover<br>
+        500✖1000<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cover3"></div>
+      <div class="cover3_txt">
+        cover<br>
+        500✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cover4"></div>
+      <div class="cover4_txt">
+        cover<br>
+        30%✖500<br>
+      </div>
+    </div>
+    <!------------------------------------------------------------>
+    <h1 id="auto_auto">★auto auto(初期値)</h1>
+    <div class="wrap">
+      <div class="auto_auto1"></div>
+      <div class="auto_auto1_txt">
+        auto auto<br>
+        1000✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="auto_auto2"></div>
+      <div class="auto_auto2_txt">
+        auto auto<br>
+        500✖1000<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="auto_auto3"></div>
+      <div class="auto_auto3_txt">
+        auto auto<br>
+        500✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="auto_auto4"></div>
+      <div class="auto_auto4_txt">
+        auto auto<br>
+        30%✖500<br>
+      </div>
+    </div>
+    <!------------------------------------------------------------>
+    <h1 id="auto_100">★auto 100%</h1>
+    <div class="wrap">
+      <div class="auto_1001"></div>
+      <div class="auto_1001_txt">
+        auto 100%<br>
+        1000✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="auto_1002"></div>
+      <div class="auto_1002_txt">
+        auto 100%<br>
+        500✖1000<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="auto_1003"></div>
+      <div class="auto_1003_txt">
+        auto 100%<br>
+        500✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="auto_1004"></div>
+      <div class="auto_1004_txt">
+        auto 100%<br>
+        30%✖500<br>
+      </div>
+    </div>
+    <!------------------------------------------------------------>
+    <h1 id="_100_auto">★100% auto</h1>
+    <div class="wrap">
+      <div class="_100_auto1"></div>
+      <div class="_100_auto1_txt">
+        100% auto<br>
+        1000✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="_100_auto2"></div>
+      <div class="_100_auto2_txt">
+        100% auto<br>
+        500✖1000<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="_100_auto3"></div>
+      <div class="_100_auto3_txt">
+        100% auto<br>
+        500✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="_100_auto4"></div>
+      <div class="_100_auto4_txt">
+        100% auto<br>
+        30%✖500<br>
+      </div>
+    </div>
+    <!------------------------------------------------------------>
+    <h1 id="_100_100">★100% 100%</h1>
+    <div class="wrap">
+      <div class="_100_1001"></div>
+      <div class="_100_1001_txt">
+        100% 100%<br>
+        1000✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="_100_1002"></div>
+      <div class="_100_auto2_txt">
+        100% 100%<br>
+        500✖1000<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="_100_1003"></div>
+      <div class="_100_auto3_txt">
+        100% 100%<br>
+        500✖500<br>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="_100_1004"></div>
+      <div class="_100_1004_txt">
+        100% 100%<br>
+        30%✖500<br>
+      </div>
+    </div>
+    
+    
+  </body>
+  </html>

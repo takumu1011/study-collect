@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <title>二重のボーダー</title>
+    <meta charset="utf-8">
+    <style>
+        pre{
+            background-color: #ccc;
+        }
+        span.red{
+            color: #f00;
+            text-decoration: underline;
+        }
+        .border1{
+            margin: 100px 200px;
+            width: 200px;
+            background-color: pink;
+            border: 2px solid #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 0 4px pink;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+        }
+        .border2{
+            width: 200px;
+            background-color: skyblue;
+            border: 1px solid #fff;
+            text-align: center;
+            position: relative;
+            border-radius: 50px;
+        }
+        .border2::before{
+            content: '';
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            border :1px solid skyblue;
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            border-radius: 50px;
+        }
+        .border3{
+            width: 200px;
+            background-color: orange;
+            border: 1px solid #fff;
+            outline: 1px solid orange;
+            outline-offset: 2px;
+            margin: 30px  20px 0 500px;
+        }
+        .border4{
+            width: 200px;
+            border: 4px double #fff;
+            background-color: green;
+            border-radius: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>二重ボーダーのボタン</h1>
+    <div class="border1">
+        box-shadowの方法
+    </div>
+    
+    <div class="border2">
+        疑似要素とcalcでの方法
+    </div>
+    
+    <div class="border3">
+        outlineでの方法(角丸不可)
+    </div>
+    
+    <div class="border4">
+        border: double
+    </div>
+    <pre>
+        <code>
+            .border1{
+                margin: 200px 200px;
+                width: 200px;
+                background-color: pink;
+                border: 2px solid #fff;
+                border-radius: 20px;
+                <span class="red">box-shadow: 0 0 0 4px pink;</span>
+                text-align: center;
+                color: #fff;
+                font-weight: bold;
+            }
+            .border2{
+                width: 200px;
+                background-color: skyblue;
+                border: 1px solid #fff;
+                text-align: center;
+                position: relative;
+                border-radius: 50px;
+            }
+            .border2::before{
+                content: '';
+                <span class="red">width: calc(100% + 4px);</span>
+                height: calc(100% + 4px);
+                border :1px solid skyblue;
+                position: absolute;
+                top: -3px;
+                left: -3px;
+                border-radius: 50px;
+            }
+            .border3{
+                width: 200px;
+                background-color: orange;
+                border: 1px solid #fff;
+                <span class="red">outline: 1px solid orange;</span>
+                outline-offset: 2px;
+                margin: 30px  20px 0 500px;
+            }
+            .border4{
+                width: 200px;
+                <span class="red">border: 4px double #fff;</span>
+                background-color: green;
+                border-radius: 50px;
+                text-align: center;
+            }
+        </code>
+    </pre>
+
+</body>
+</html>

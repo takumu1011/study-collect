@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>DEV TEMPLATE GULP</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="stylesheet" href="./ assets / css / site.default.css">
+  <link rel="stylesheet" href="./assets/css/site.top.css">
+  <style>
+    .waku{
+      width: 100px;
+      height: 100px;
+      margin: 30px;
+    }
+    .waku500{
+      width: 500px;
+      height: 500px;
+      margin: 30px;
+    }
+    .waku1{
+      background: url(1600_200.jpg) no-repeat top center #000;
+      background-size: contain;
+    }
+    .waku2{
+      background: url(1600_200.jpg) no-repeat top center #000;
+      background-size: cover;
+    }
+    .waku3{
+      background: url(1600_200.jpg) no-repeat top center #000;
+      background-size: 100% auto;
+    }
+    
+    .outer{
+      width: 200px;
+      height: 100px;
+      margin: 30px;
+    }
+    .outer1{
+      background: url(20_80.jpg) no-repeat top center #000;
+      background-size: contain;
+    }
+    .outer2{
+      background: url(20_80.jpg) no-repeat top center #000;
+      background-size: cover;
+    }
+    .outer3{
+      background: url(20_80.jpg) no-repeat top center #000;
+      background-size: 10% 80%;
+    }
+    .outer4{
+      background: url(20_80.jpg) no-repeat top center #000;
+      background-size: 12px 100px;
+    }
+    .outer5{
+      background: url(20_80.jpg) no-repeat top center #000;
+      background-size: 3em;
+    }
+    
+    
+    
+    .section{
+      margin: 50px 0;
+    }
+    .bg{
+      font-size: 24px;
+      background-image: url(../img/sample3.png);
+      height: 200px;
+    }
+    .bg11{
+      background-color: skyblue;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .bg12{
+      background-color: rgb(95, 146, 18);
+      background-size: contain;
+      background-repeat: space;
+    }
+    .bg13{
+      background-color: skyblue;
+      background-size: contain;
+      background-repeat: round;
+    }
+    .bg14{
+      background-color: rgb(95, 146, 18);
+      background-size: contain;
+      background-repeat: repeat;
+    }
+    .bg15{
+      background-color: skyblue;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-origin: border-box;
+      border: 5px solid #f00;
+      padding: 5px;
+      margin: 5px;
+      background-position: 30px 30px
+    }
+    .bg16{
+      background-color: rgb(95, 146, 18);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-origin: padding-box;
+      border: 5px solid #f00;
+      padding: 5px;
+      margin: 5px;
+      background-position: 30px 30px;
+    }
+    .bg17{
+      background-color: skyblue;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      border: 5px solid #f00;
+      padding: 5px;
+      margin: 5px;
+      background-position: 30px 30px;
+    }
+    .bg18{
+      background-color: rgb(95, 146, 18);
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: 20px dotted navy;
+      padding: 15px;
+      margin: 5px;
+      background-clip: border-box;
+    }
+    .bg19{
+      background-color: skyblue;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: 20px dotted navy;
+      padding: 15px;
+      margin: 5px;
+      background-clip: padding-box;
+    }
+    .bg110{
+      background-color: rgb(95, 146, 18);
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: 20px dotted navy;
+      padding: 15px;
+      margin: 5px;
+      background-clip: content-box;
+    }
+    .bg21{
+      background-color: skyblue;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .bg22{
+      background-color: rgb(95, 146, 18);
+      background-size: cover;
+      background-repeat: space;
+    }
+    .bg23{
+      background-color: skyblue;
+      background-size: cover;
+      background-repeat: round;
+    }
+    
+  </style>
+</head>
+<body>
+  <p><a href="index_detail.html">background-size詳細</a></p>
+  <h1>background(ショートハンド)</h1>
+  <ul>
+    <li><h2>各プロパティの初期値</h2></li>
+    <li>background-image: none</li>
+    <li>background-position: 0% 0%</li>
+    <li>background-size: auto auto</li>
+    <li>background-repeat: repeat</li>
+    <li>background-origin: padding-box</li>
+    <li>background-clip: border-box</li>
+    <li>background-attachment: scroll</li>
+    <li>background-color: transparent</li>
+  </ul>
+  
+  <h1>1600×200</h1>
+  <h2>contain</h2>
+  <div class="waku waku1">
+  </div>
+  <h2>cover</h2>
+  <div class="waku waku2">
+  </div>
+  <h2>100% auto</h2>
+  <div class="waku waku3">
+  </div>
+  
+  
+  <h2>枠500×500</h2>
+  <div class="waku500 waku1">
+  </div>
+  <div class="waku500 waku2">
+  </div>
+  <div class="waku500 waku3">
+  </div>
+  
+  <h1>20×80</h1>
+  <h2>contain</h2>
+  <div class="outer outer1">
+  </div>
+  <h2>cover</h2>
+  <div class="outer outer2">
+  </div>
+  <h2>10% 80%</h2>
+  <div class="outer outer3">
+  </div>
+  <h2>12px×100px</h2>
+  <div class="outer outer4">
+  </div>
+  <h2>3em</h2>
+  <div class="outer outer5">
+  </div>
+  
+  <div class="section contain">
+    <div class="bg bg11">background-position: center(center center)/contain</div>
+    <div class="bg bg12">background-repeat: space/contain</div>
+    <div class="bg bg13">background-repeat: round/contain</div>
+    <div class="bg bg14">background-repeat: repeat/contain ※ウインドウによって切り取られる</div>
+    <div class="bg bg15">background-origin: border-box/contain</div>
+    <div class="bg bg16">background-origin: padding-box/contain</div>
+    <div class="bg bg17">background-origin: content-box/contain</div>
+    <div class="bg bg18">background-clip: border-box/contain</div>
+    <div class="bg bg19">background-clip: padding-box/contain</div>
+    <div class="bg bg110">background-clip: content-box/contain</div>
+  </div>
+  
+  <div class="section cover">
+    <div class="bg bg21">background-position: center(center center)/cover</div>
+    <div class="bg bg22">background-repeat: space/cover</div>
+    <div class="bg bg23">background-repeat: round/cover</div>
+  </div>
+  
+</body>
+</html>

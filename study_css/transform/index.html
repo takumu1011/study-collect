@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>transformの使い方</title>
+  <style>
+  body{
+    margin:0;
+  }
+  h1{
+    border-bottom:3px dashed #eee;
+    padding-bottom:20px;
+  }
+  .con{
+    position:relative;
+  }
+  .wrap{
+    height:900px;
+    background:#eee;
+    position:relative;
+  }
+  .wrap:hover>.translate50{
+    transform:translateX(50%);
+  }
+  .wrap:hover>.left50{
+    position:absolute;
+    left:50%;
+  }
+  .wrap:hover>.center{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+  }
+  .box{
+    width:300px;
+    height:200px;
+    background:#000;
+    color:#fff;
+    margin:30px 0;
+  }
+  .translate_parent,.rotate_parent,.scale_parent,.skew_parent,.matrix_parent{
+    background:#eee;
+    width:500px;
+    height:300px;
+  }
+  .translate_parent:hover > .translate{
+    transform:translate(300px,20px);
+  }
+
+  .rotate_parent:hover > .rotate{
+    transform:rotateZ(-10deg);
+  }
+  .scale_parent:hover > .scale{
+    transform:scaleY(2);
+  }
+  .skew_parent:hover > .skew{
+    transform:skewX(30deg);
+  }
+  .matrix_parent:hover > .matrix{
+    transform:matrix(0,1,1,1,100,50);
+  }
+
+  .x-rotate{
+    transition:1s linear;
+  }
+  .wrap_rotate:hover>.x-rotate{
+    transform:rotateX(180deg);
+  }
+  .y-rotate{
+    transition:1s linear;
+  }
+  .wrap_rotate:hover>.y-rotate{
+    transform:rotateY(180deg);
+  }
+  .z-rotate{
+    transition:1s linear;
+  }
+  .wrap_rotate:hover>.z-rotate{
+    transform:rotateZ(180deg);
+  }
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+<h1>transformの使い方</h1>
+<p>※◎transform:translateX(200px) translateY(200px);<br>
+  ✖transform:translateX(200px);<br>
+  transform:translateY(200px);　←こっちに上書きされる
+</p>
+
+
+<div class="con">
+  <h2>translate</h2>
+  <p>※自分を基準として動く</p>
+  <p>※センター寄せ：absolute left:50%; translateX(-50%)</p>
+<div class="translate_parent">
+  <div class="box translate">
+    <pre><code>
+      .translate_parent:hover > .translate{
+        transform:translate(300px,20px);
+      }
+    </code></pre>
+  </div>
+</div>
+
+<div class="wrap wrap_translate">
+  <h2>translate(50%)とleft:50%の違い</h2>
+  <div class="box translate50">
+    <p>translate50%</p>
+    <pre><code>
+      .wrap:hover>.translate50{
+        transform:translateX(50%);
+      }
+    </code></pre>
+  </div>
+  <div class="box left50">
+    <p>left50%</p>
+    <pre><code>
+      .wrap:hover>.left50{
+        position:absolute;
+        left:50%;
+      }
+    </code></pre>
+  </div>
+  <div class="box center">
+    <p>center配置</p>
+    <pre><code>
+      .wrap:hover>.center{
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+      }
+    </code></pre>
+  </div>
+</div>
+
+</div>
+
+
+
+<div class="con">
+  <h2>rotate</h2>
+  <div class="rotate_parent">
+  <div class="box rotate">
+    <pre><code>
+      .rotate_parent:hover > .rotate{
+        transform:rotateZ(-10deg);
+      }
+    </code></pre>
+  </div>
+</div>
+
+<div class="wrap wrap_rotate">
+  <h2>rotateX・rotateY・rotateZ</h2>
+  <div class="box x-rotate">
+    <p>rotateX</p>
+    <pre><code>
+      .wrap_rotate:hover>.x-rotate{
+        transform:rotateX(180deg);
+      }
+    </code></pre>
+  </div>
+  <div class="box y-rotate">
+    <p>rotateY</p>
+    <pre><code>
+      .wrap_rotate:hover>.y-rotate{
+        transform:rotateY(180deg);
+      }
+    </code></pre>
+  </div>
+  <div class="box z-rotate">
+    <p>rotateZ</p>
+    <pre><code>
+      .wrap_rotate:hover>.z-rotate{
+        transform:rotateZ(180deg);
+      }
+    </code></pre>
+  </div>
+</div>
+
+
+
+
+</div>
+
+<div class="con">
+  <h2>scale</h2>
+  <div class="scale_parent">
+  <div class="box scale">
+    <pre><code>
+      .scale_parent:hover > .scale{
+        transform:scaleY(2);
+      }
+    </code></pre>
+  </div>
+</div>
+</div>
+
+
+<div class="con">
+  <h2>skew</h2>
+  <div class="skew_parent">
+  <div class="box skew">
+    <pre><code>
+      .skew_parent:hover > .skew{
+        transform:skewX(30deg);
+      }
+    </code></pre>
+  </div>
+</div>
+</div>
+
+<div class="con">
+  <h2>matrix</h2>
+  <p><a href="https://ginpen.com/2018/11/13/understanding-transform-matrix/">matrix解説</a></p>
+  <div class="matrix_parent">
+  <div class="box matrix">
+    <pre><code>
+      .matrix_parent:hover > .matrix{
+        transform:matrix(0,1,1,1,100,50);
+      }
+    </code></pre>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

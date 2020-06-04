@@ -1,0 +1,371 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+$txtColor: #a0522d;
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: $txtColor;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $txtColor;
+  }
+
+  .disactive {
+    display: none;
+  }
+
+  .pc_layout {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.6;
+  }
+
+  .sp_layout {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.6;
+  }
+}
+//body
+
+.wrapper {
+  margin: 0 auto;
+  overflow: hidden;
+}
+//wrapper
+
+header {
+  position: relative;
+  width: 100%;
+
+  .logoArea {
+    display: inline-block;
+    width: 150px;
+    padding: 35px 0 25px 155px;
+  }
+
+  .header_txtArea {
+    float: right;
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 70px;
+    padding: 35px 140px 35px 0;
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 7px;
+
+    .header_txt_down,
+    .header_txt_up {
+      margin: 0;
+    }
+  }
+  //header_txtArea
+}
+//header
+
+.mainvisualArea {
+  clear: both;
+  position: relative;
+  width: 100%;
+  height: 270px;
+  background-image: url(../img/bg.gif);
+
+  .main_chara {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-310px);
+    width: 680px;
+  }
+
+  .main_txt {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-370px);
+    width: 740px;
+  }
+}
+//mainvisualArea
+//---------------------------------------------------------------
+
+main {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  .play_txt {
+    position: absolute;
+    top: 10px;
+    left: -100px;
+    z-index: -1;
+    transform: rotate(-30deg);
+    width: 400px;
+    background: #ff1493;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .main_left {
+    display: inline-block;
+    box-sizing: border-box;
+
+    .chara_imgArea {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      z-index: -2;
+      transform: translateX(-380px);
+    }
+  }
+  //main_left
+  .main_right {
+    position: absolute;
+    top: 60px;
+    right: 50%;
+    transform: translateX(385px);
+
+    .vv_txt {
+      font-size: 32px;
+      letter-spacing: 3;
+    }
+
+    .heart_wrapper {
+      position: relative;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .heart_img {
+        position: absolute;
+        top: 0;
+        left: 70px;
+        width: 135px;
+      }
+
+      .arrow_img {
+        position: absolute;
+        top: 45px;
+        left: 135px;
+        width: 15px;
+      }
+    }
+    //heart_wrapper
+    .megumi_txt {
+      margin: 185px 0 0 35px;
+      line-height: 1.5em;
+      letter-spacing: 11px;
+      font-size: 38px;
+    }
+  }
+  //main_right
+  .centerTxt {
+    margin: 620px auto 60px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 2em;
+
+    .date {
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+  }
+  //centerTxt
+  .txt_area {
+    width: 700px;
+    margin: 0 auto;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    line-height: 2em;
+
+    .txt_one {
+      margin: 20px 0 0 20px;
+    }
+
+    .txt_two {
+      margin: 65px 0 0 20px;
+    }
+  }
+  //txt_area
+}
+//main
+//---------------------------------------------------------------
+
+footer {
+  width: 100%;
+  margin: 230px 0 0;
+  padding: 32px 0 60px;
+  background-image: url(../img/bg.gif);
+  text-align: center;
+  font-size: 12px;
+
+  .footer_list {
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+
+    li {
+      display: inline-block;
+
+      &::before {
+        content: "/";
+      }
+
+      &:first-child::before {
+        display: none;
+      }
+    }
+  }
+  //footer_list
+}
+//footer
+@media screen and (max-width:768px) {
+  .wrapper {}
+
+  header {
+    position: relative;
+    height: 70px;
+
+    .logoArea {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-170px);
+      width: 80px;
+      padding: 0;
+    }
+
+    .header_txtArea {
+      float: none;
+      position: absolute;
+      top: 17px;
+      right: 50%;
+      transform: translateX(168px);
+      width: 180px;
+      height: 40px;
+      padding: 0;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+  }
+  //header
+  .mainvisualArea {
+    width: 100%;
+    height: 140px;
+
+    .main_chara {
+      transform: translateX(-188px);
+      width: 370px;
+    }
+
+    .main_txt {
+      transform: translateX(-185px);
+      width: 370px;
+    }
+  }
+  //---------------------------------------------------------------
+  main {
+    width: 100%;
+
+    .play_txt {
+      top: -5px;
+      left: -30px;
+      width: 140px;
+      font-size: 13px;
+    }
+
+    .main_left {
+      .chara_imgArea {
+        top: 20px;
+        transform: translateX(-168px);
+        width: 185px;
+      }
+    }
+    //main_left
+    .main_right {
+      top: 42px;
+      transform: translateX(150px);
+
+      .vv_txt {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+
+      .heart_wrapper {
+        .heart_img {
+          left: 22px;
+          width: 70px;
+        }
+
+        .arrow_img {
+          top: 24px;
+          left: 53px;
+          width: 12px;
+        }
+      }
+      //heart_wrapper
+      .megumi_txt {
+        margin: 90px 0 0 15px;
+        font-size: 16px;
+        line-height: 1.5em;
+        letter-spacing: 2px;
+      }
+    }
+    //main_right
+    .centerTxt {
+      margin: 314px 0 37px;
+      font-size: 14px;
+      line-height: 1.8em;
+
+      .date {
+        letter-spacing: 1.5px;
+      }
+    }
+
+    .txt_area {
+      width: auto;
+      font-size: 13px;
+      letter-spacing: 1.9px;
+      line-height: 1.9em;
+
+      .txt_two {
+        margin: 23px 0 0 20px;
+      }
+    }
+  }
+  //main
+  //---------------------------------------------------------------
+  footer {
+    margin: 135px 0 0;
+  }
+  //footer
+}
+//mediaquery

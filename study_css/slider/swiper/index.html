@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="ALL"><!-- noindex,nofollow -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<title>Swiper</title>
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<style>
+.swiper-container {
+    width: 600px;
+    height: 150px;
+}
+img{
+  display: block;
+  width: 100%;
+}
+</style>
+<body>
+  <h1>Swiper</h1>
+  <p><a href="https://swiperjs.com/api/">Swiperドキュメント</a></p>
+
+ <!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="sample.png"></div>
+        <div class="swiper-slide"><img src="sample.png"></div>
+        <div class="swiper-slide"><img src="sample.png"></div>
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+
+<script src="https://unpkg.com/swiper/js/swiper.js"></script>
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      //スライドする方向horizontal or vertical
+      direction: 'horizontal',
+      //ループするか
+      loop: false,
+      speed: 200,
+      //slide,fade,cube,coverflow,flip
+      effect: 'cube',
+  
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+  
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+  
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+
+      autoplay: {
+        delay: 3000,
+      },
+      controller: {
+        inverse: true,
+      },
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="ALL">
+    <!-- noindex,nofollow -->
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <title>DEV TEMPLATE GULP</title>
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <!-- website, blog -->
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:determiner" content="タイトルの前に付く単語">
+    <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:site" content="@[Twitter ID]">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="mobile-web-app-capable" content="no">
+    <link rel="canonical" href="サイトURL">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="stylesheet" href="./ assets / css / site.default.css">
+    <link rel="stylesheet" href="./assets/css/site.top.css">
+    <style>
+        pre {
+            background-color: yellow;
+            border-top: 5px solid #000;
+            border-bottom: 5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>RSS読み込み</h1>
+    <pre>
+        <code>
+            &lt;script&gt;   
+            //HTMLドキュメントの解析後に実行
+            window.addEventListener('DOMContentLoaded', function() {
+                //XMLHttpRequestのインスタンスを作成
+                var req = new XMLHttpRequest();
+                //読み込み時の処理を設定
+                req.onreadystatechange = function() {
+                        //readyState=4はすべてのデータを受信済み、
+                        //status=200は正常に処理されたことを意味する
+                        if (req.readyState == 4 && req.status == 200) {
+                            document.getElementById("message").innerHTML = req.responseText;
+                        }
+                    }
+                    //接続先のURLやメソッドの設定
+                req.open("GET", "output_rss.php");
+                //リクエストをサーバーに送信
+                req.send();
+            })
+            &lt;/script&gt;
+            &lt;?php
+                date_default_timezone_set('Asia/Tokyo');
+
+                $url="https://www.city.shikokuchuo.ehime.jp/rss_news.xml";
+                $max=5;
+
+                //simplexml_load_file()でRSSをパースしてオブジェクトを取得、オブジェクトが空でなかればブロック内を処理
+                if($rss=simplexml_load_file($url)){
+                    $cnt=0;
+                    $output='';
+
+                    foreach($rss->channel->item as $item){
+                        if($cnt>=$max) break;
+
+                        $date=date('Y年m月d',strtotime($item->pubDate));
+                        $output.='&lt;a href="'.$item->link.'"&gt;'.$date."".$item->title.'&lt;/a&gt;&lt;br&gt;';
+                        $cnt++;
+                    }
+                    echo $output;
+                }
+            ?&gt;
+        </code>
+    </pre>
+
+    <div id="message"></div>
+
+    <script>
+        //HTMLドキュメントの解析後に実行
+        window.addEventListener('DOMContentLoaded', function() {
+            //XMLHttpRequestのインスタンスを作成
+            var req = new XMLHttpRequest();
+            //読み込み時の処理を設定
+            req.onreadystatechange = function() {
+                    //readyState=4はすべてのデータを受信済み、
+                    //status=200は正常に処理されたことを意味する
+                    if (req.readyState == 4 && req.status == 200) {
+                        document.getElementById("message").innerHTML = req.responseText;
+                    }
+                }
+                //接続先のURLやメソッドの設定
+            req.open("GET", "output_rss.php");
+            //リクエストをサーバーに送信
+            req.send();
+        })
+    </script>
+</body>
+
+</html>

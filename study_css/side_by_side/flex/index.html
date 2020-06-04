@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="ALL"><!-- noindex,nofollow -->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <title>flex</title>
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="website"><!-- website, blog -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:determiner" content="タイトルの前に付く単語">
+  <meta property="fb:app_id" content="App-ID(15文字の半角数字)">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:site" content="@[Twitter ID]">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="no">
+  <meta name="mobile-web-app-capable" content="no">
+  <link rel="canonical" href="サイトURL">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="stylesheet" href="./ assets / css / site.default.css">
+  <link rel="stylesheet" href="./assets/css/site.top.css">
+</head>
+<style>
+  hr{
+    margin: 50px 0;
+    border-top: 5px dashed skyblue;
+  }
+  .nav_wrap{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid brown;
+  }
+  .parent_addList li,.children_addList li{
+    list-style-type: none;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 2.5em;
+  }
+  a{
+    color: brown;
+    text-decoration: none;
+  }
+  .pgtop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 100px;
+    background-color: skyblue;
+    border: 1px solid #000;
+    border-radius: 20px;
+  }
+  .pgtop a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: opacity 100ms ease-out 0s;
+  }
+  .pgtop a:hover{
+    opacity: 0.5;
+  }
+  
+  /*-------------------------------------------*/
+  
+  
+  .flex_wrap{
+    display: flex;
+  }
+  .flex_item{
+    margin: 20px 20px;
+    background-color: #f00;
+  }
+  
+  .flex-direction_row{
+    display: flex;
+    flex-direction: row;
+    background-color: #ccc;
+  }
+  .flex-direction_row-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #ccc;
+  }
+  .flex-direction_column{
+    display: flex;
+    flex-direction: column;
+    background-color: #ccc;
+  }
+  .flex-direction_column-reverse{
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #ccc;
+  }
+  .flex-wrap_nowrap{
+    width: 200px;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ccc;
+  }
+  .flex-wrap_wrap{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ccc;
+  }
+  .flex-wrap_wrap-reverse{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    background-color: #ccc;
+  }
+  .justify-content_flex-start{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #ccc;
+  }
+  .justify-content_flex-end{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ccc;
+  }
+  .justify-content_center{
+    display: flex;
+    justify-content: center;
+    background-color: #ccc;
+  }
+  .justify-content_space-between{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ccc;
+  }
+  .justify-content_space-around{
+    display: flex;
+    justify-content: space-around;
+    background-color: #ccc;
+  }
+  .align-items_stretch{
+    display: flex;
+    align-items: stretch;
+    background-color: #ccc;
+  }
+  .align-items_flex-start{
+    display: flex;
+    align-items: flex-start;
+    background-color: #ccc;
+  }
+  .align-items_flex-end{
+    display: flex;
+    align-items: flex-end;
+    background-color: #ccc;
+  }
+  .align-items_center{
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+  }
+  .align-items_baseline{
+    display: flex;
+    align-items: baseline;
+    background-color: #ccc;
+  }
+  .align-content_stretch{
+    width: 200px;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    background-color: #ccc;
+  }
+  .align-content_flex-start{
+    width: 200px;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: #ccc;
+  }
+  .align-content_flex-end{
+    width: 200px;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    background-color: #ccc;
+  }
+  .align-content_center{
+    width: 200px;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: #ccc;
+  }
+  .align-content_space-between{
+    width: 200px;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    background-color: #ccc;
+  }
+  .align-content_space-around{
+    width: 200px;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    background-color: #ccc;
+  }
+  .flex_parent{
+    display: flex;
+    background-color: #ccc;
+  }
+  .flex_item1{
+    order: 1;
+  }
+  .flex_item2{
+    order: 3;
+  }
+  .flex_item3{
+    order: 2;
+  }
+  .flex_item4{
+    order: 4;
+  }
+  .flex_item5{
+    flex-grow: 2;
+  }
+  .flex_item6{
+    flex-grow: 3;
+  }
+  .flex_item7{
+    flex-grow: 1;
+  }
+  .flex_item8{
+    flex-grow: 4;
+  }
+  .flex_item9{
+    flex-shrink: 1;
+  }
+  .flex_item10{
+    flex-shrink: 3;
+  }
+  .flex_item11{
+    flex-shrink: 2;
+  }
+  .flex_item12{
+    flex-shrink: 4;
+  }
+  .flex_item13{
+    flex-basis: 200px;
+  }
+  .flex_item14{
+    flex-basis: 20%;
+  }
+  .flex_item15{
+    flex-basis: auto;
+  }
+  .flex_item16{
+    flex-basis: 150px;
+  }
+</style>
+<body>
+  <div class="pgtop">
+    <a href="#">TOPへ</a>
+  </div>
+  <h1>display: flex</h1>
+  
+  <div class="flex_wrap">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <div class="nav_wrap">
+    <h2>親要素に指定</h2>
+    <ul class="parent_addList">
+      <li><a href="#flex-direction">★flex-direction</a></li>
+      <li><a href="#flex-wrap">★flex-wrap</a></li>
+      <li><a href="#justify-content">★justify-content</a></li>
+      <li><a href="#align-items">★align-items</a></li>
+      <li><a href="#align-content">★align-content</a></li>
+    </ul>
+    <h2>子要素に指定</h2>
+    <ul class="children_addList">
+      <li><a href="#order">★order</a></li>
+      <li><a href="#flex-grow">★flex-grow</a></li>
+      <li><a href="#flex-shrink">★flex-shrink</a></li>
+      <li><a href="#flex-basis">★flex-basis</a></li>
+      <li><a href="#align-self">★align-self</a></li>
+    </ul>
+  </div>
+  
+  <hr>
+  <h1 id="flex-direction">★flex-direction・・子要素の並ぶ向き</h1>
+  <h2>flex-direction: row(初期値)</h2>
+  <div class="flex-direction_row">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>flex-direction: row-reverse</h2>
+  <div class="flex-direction_row-reverse">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>flex-direction: column</h2>
+  <div class="flex-direction_column">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>flex-direction: column-reverse</h2>
+  <div class="flex-direction_column-reverse">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  <hr>
+  
+  <h1 id="flex-wrap">★flex-wrap・・子要素の折り返し</h1>
+  
+  <h2>flex-wrap: nowrap(初期値)</h2>
+  <div class="flex-wrap_nowrap">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>flex-wrap: wrap</h2>
+  <div class="flex-wrap_wrap">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>flex-wrap: wrap-reverse</h2>
+  <div class="flex-wrap_wrap-reverse">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <hr>
+  <h1 id="justify-content">★justify-content・・水平方向の揃え</h1>
+  
+  <h2>justify-content: flex-start(初期値)</h2>
+  <div class="justify-content_flex-start">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>justify-content: flex-end</h2>
+  <div class="justify-content_flex-end">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>justify-content: center</h2>
+  <div class="justify-content_center">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  <h2>justify-content: space-between</h2>
+  <div class="justify-content_space-between">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>justify-content: space-around</h2>
+  <div class="justify-content_space-around">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  <hr>
+  <h1 id="align-items">★align-items・・垂直方向の揃え</h1>
+  
+  <h2>align-items: stretch(初期値)</h2>
+  <div class="align-items_stretch">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height:200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-items: flex-start</h2>
+  <div class="align-items_flex-start">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-items: flex-end</h2>
+  <div class="align-items_flex-end">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-items: center</h2>
+  <div class="align-items_center">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-items: baseline</h2>
+  <div class="align-items_baseline">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <hr>
+  <h1 id="align-content">★align-content・・複数行にした時の揃え</h1>
+  
+  <h2>align-content: stretch(初期値)</h2>
+  <div class="align-content_stretch">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-content: flex-start</h2>
+  <div class="align-content_flex-start">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-content: flex-end</h2>
+  <div class="align-content_flex-end">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-content: center</h2>
+  <div class="align-content_center">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-content: space-between</h2>
+  <div class="align-content_space-between">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  
+  <h2>align-content: space-around</h2>
+  <div class="align-content_space-around">
+    <div class="flex_item">Item1</div>
+    <div class="flex_item" style="height: 200px;">Item2</div>
+    <div class="flex_item">Item3</div>
+    <div class="flex_item">Item4</div>
+  </div>
+  <hr>
+  
+  <h1 id="order">★order・・順序の指定</h1>
+  <h2>order: 4(初期値は0)</h2>
+  <div class="flex_parent">
+    <div class="flex_item flex_item1">Item1</div>
+    <div class="flex_item flex_item2" style="height: 200px;">Item2</div>
+    <div class="flex_item flex_item3">Item3</div>
+    <div class="flex_item flex_item4">Item4</div>
+  </div>
+  <hr>
+  <h1 id="flex-grow">★flex-grow・・子要素の伸びる比率</h1>
+  <h2>flex-grow: 4(初期値は0)</h2>
+  <div class="flex_parent">
+    <div class="flex_item flex_item5">Item1</div>
+    <div class="flex_item flex_item6" style="height: 200px;">Item2</div>
+    <div class="flex_item flex_item7">Item3</div>
+    <div class="flex_item flex_item8">Item4</div>
+  </div>
+  <hr>
+  <h1 id="flex-shrink">★flex-shrink・・子要素の縮む比率</h1>
+  <h2>flex-shrink: 2(初期値は1)</h2>
+  <div class="flex_parent">
+    <div class="flex_item flex_item9">Item1</div>
+    <div class="flex_item flex_item10" style="height: 200px;">Item2</div>
+    <div class="flex_item flex_item11">Item3</div>
+    <div class="flex_item flex_item12">Item4</div>
+  </div>
+  <hr>
+  <h1 id="flex-basis">★flex-basis・・子要素のベースとなる幅の指定</h1>
+  <h2>flex-basis: 200px(初期値はauto)</h2>
+  <div class="flex_parent">
+    <div class="flex_item flex_item13">Item1</div>
+    <div class="flex_item flex_item14" style="height: 200px;">Item2</div>
+    <div class="flex_item flex_item15">Item3</div>
+    <div class="flex_item flex_item16">Item4</div>
+  </div>
+  <hr>
+</body>
+</html>

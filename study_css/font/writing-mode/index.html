@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>writing-mode</title>
+  <style>
+ 
+ .horizontal-tb{
+   width: 800px;
+   writing-mode: horizontal-tb;
+   background-color: #ccc;
+ }
+ .vertical-rl{
+   width: 800px;
+   writing-mode: vertical-rl;
+   background-color: skyblue;
+ }
+ .vertical-lr{
+   width: 800px;
+   writing-mode: vertical-lr;
+   background-color: orange;
+ }
+  </style>
+</head>
+<body>
+  <h1>writing-mode</h1>
+  <h2>初期値：horizontal-tb</h2>
+  <h2>継承あり</h2>
+  <p>line-heightに注目(widthが広がるのか、heightが広がるのか）</p>
+
+  <p class="horizontal-tb">テキストhorizontal-tbで表示</p>
+  <p class="vertical-rl">テキストvertical-rlで表示</p>
+  <p class="vertical-lr">テキストvertical-lrで表示</p>
+</body>
+</html>

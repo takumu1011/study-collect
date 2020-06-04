@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <style>
+  body{
+  height: 3000px;
+  color: #fff;
+}
+img{
+  display:block;
+  width: 100%;
+}
+.wrap{
+  width: 500px;
+  height: 100%;
+  position: relative;
+  background: #000;
+  margin: 0 auto;
+}
+.list_block{
+  background-color: #fff;
+  color: #000;
+}
+.list_a{
+  background-color: orange;
+}
+.list_b{
+  background-color: pink;
+}
+.btn{
+  width:100px;
+  height:120px;
+  margin: 0 auto;
+}
+.ball{
+  opacity: 0;
+}
+.balloon{
+  position: absolute;
+  top: 1500px;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0;
+  transition: all 3s 500ms;
+}
+
+.sc_balloon{
+  opacity: 1;
+  transform: translate(0, -200px);
+}
+
+
+
+#q{
+  position: absolute;
+  bottom: 540px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+
+}
+
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>ページトップ</h1>
+  <button class="reloadBtn">ページのリロード</button>
+  <div class="list_block">
+    <ul class="list_a">
+      <li><p>リストA</p></li>
+      <li>リスト１</li>
+      <li>リスト２</li>
+      <li>リスト３</li>
+    </ul>
+    <ul class="list_b">
+      <li><p>リストB</p></li>
+      <li>リスト１</li>
+      <li>リスト２</li>
+      <li>リスト３</li>
+    </ul>
+    <button class="findBtn">子孫要素の取得find()</button>
+    <button class="childrenBtn">直下の子要素の取得children()</button>
+    <button class="parentBtn">親要素の取得parent()</button>
+    <button class="changeTxt">テキストの変更text()</button>
+    <button class="hideBtn">要素の非表示hide()</button>
+    <button class="showBtn">要素の表示show()</button>
+    <button class="prependBtn">prependで追加</button>
+    <button class="appendBtn">appendで追加</button>
+    <button class="beforeBtn">beforeで追加</button>
+    <button class="afterBtn">afterで追加</button>
+
+  </div>
+
+
+  <div class="btn">
+    <img src="./search.png">
+  </div>
+  <div class="ball">
+    <img src="./ball.png">
+  </div>
+  <div class="balloon fadein">
+    <img src="./balloon.png">
+  </div>
+  <div id="q">
+    <img src="./q.jpg">
+  </div>
+</div>
+
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+<script>
+//子孫要素の取得find()
+$('.findBtn').on('click',function(){
+  $('.list_a').find('li').css({
+    color: 'red',
+    fontSize: '2em'
+  });
+});
+//直下の子要素の取得children()
+$('.childrenBtn').on('click',function(){
+  $('.list_a li').children('p').css({
+    fontSize:'10px'
+  });
+});
+//要素の非表示hide()
+$('.hideBtn').on('click',function(){
+  $('.list_b').hide();
+});
+//要素の表示show()
+$('.showBtn').on('click',function(){
+  $('.list_b').show();
+});
+//何番目の取得eq()/テキストを取得・変更text()
+$('.changeTxt').on('click',function(){
+  $('.list_a li').eq(1).text("変更");
+});
+
+//prependで子要素追加
+$('.prependBtn').on('click',function(){
+  $('.list_b').prepend('<li>prependで追加</li>');
+});
+//appendで子要素追加
+$('.appendBtn').on('click',function(){
+  $('.list_b').append('<li>appendで追加</li>');
+});
+//beforeで要素追加
+$('.beforeBtn').on('click',function(){
+  $('.list_b').before('<p>beforeで追加</p>');
+})
+//afterで要素追加
+$('.afterBtn').on('click',function(){
+  $('.list_b').after('<p>afterで追加</p>');
+});
+//parent()で親要素の取得
+$('.parentBtn').on('click',function(){
+  $('.list_a li').parent().css('background-color','skyblue');
+});
+
+
+
+
+
+// ページトップへ
+$('#q').on('click',function(){
+  $('html,body').animate({
+    scrollTop: 0
+  },5000);
+});
+// 探す
+$('.btn').on('click',function(){
+  let position=$('#q').offset().top;
+  $('html,body').animate({
+    scrollTop:position
+  });
+});
+
+// マウスを乗せたとき
+$('#q').on('mouseenter',function(){
+  $(this).css({
+    transform: 'scale(2)'
+  });
+});
+
+
+
+
+//マウスを外した時
+$('#q').on('mouseleave',function(){
+  $(this).css({
+    transform: 'scale(1)'
+  });
+});
+
+//画面が表示されたとき
+$(window).on('load',function(){
+  $('.ball').animate({
+    opacity: 1
+  }, 5000);
+});
+
+//スクロールするとフェードイン
+$(window).on('scroll',function(){
+  $('.balloon').each(function(){
+    let imgPos=$(this).offset().top; //画像の位置
+    let scroll=$(window).scrollTop(); //スクロールの位置
+    let windowHeight=$(window).height(); //windowの高さ
+
+//windowHeight/5とwindowHeight*1.2は同意味
+    if(scroll>imgPos-windowHeight+windowHeight/5){
+      $(this).addClass('sc_balloon');
+    }
+  });
+});
+
+
+
+//リロード
+$('.reloadBtn').on('click',function(){
+  location.reload();
+});
+
+
+</script>
+
+</body>
+</html>

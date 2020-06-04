@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>animation</title>
+  <style>
+  .code_zone{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .wrapper{
+
+  }
+  .wrap{
+    width:300px;
+    height:300px;
+    margin:50px auto;
+    background:#eee;
+  }
+  .box{
+    width:200px;
+    height:200px;
+    background:purple;
+  }
+  @keyframes rotation{
+    0%{
+      transform:scale(0.3);
+    }
+    50%{
+      transform:scale(0.6) rotate(-45deg);
+      background:red;
+    }
+    100%{
+      transform:scale(1) rotate(180deg);
+      background:blue;
+    }
+  }
+  @keyframes fadeIn{
+    from{
+      opacity:0;
+    }
+    to{
+      opacity:1;
+    }
+  }
+
+  .wrap_first:hover>.box{
+    animation:rotation 2s;
+  }
+  .wrap_second:hover>.box{
+    animation:rotation 2s 0s ease-in 3 alternate none running;
+  }
+  .wrap_third:hover>.box{
+    animation:fadeIn 3s 0s ease infinite reverse forwards running;
+  }
+
+
+
+  </style>
+</head>
+<body>
+  <h1>animation</h1>
+  <p><a href="https://qiita.com/7968/items/1d999354e00db53bcbd8">animation解説</a></p>
+  <p><a href="https://easings.net/">easing</a></p>
+  <p><a href="https://q-az.net/mouse-hover-transition-or-animation/">transitionとの違い</a></p>
+  <p>アニメーションに指定できないCSSプロパティもある(例：display:none)</p>
+  <p>二工程以上のアニメーション時に利用</p>
+  <p>ループが可能</p>
+
+  <ul>
+    <li>animation-name</li>
+    <li>animation-duration</li>
+    <li>animation-delay</li>
+    <li>animation-timing-function</li>
+    <li>animation-iteration-count：アニメーションのループ回数(数字,infinite)</li>
+    <li>animation-direction：アニメーションの再生方向(reverse,alternate,alternate-reverse)</li>
+    <li>animation-fill-mode：指定したプロパティを開始前・後に適用(forwards,backwards,both)</li>
+    <li>animation-play-state：再生中か一時停止にするか(running,paused)</li>
+  </ul>
+<div class="code_zone">
+  <pre><code>
+    @keyframes rotation{
+      0%{
+        transform:scale(0.3);
+      }
+      50%{
+        transform:scale(0.6) rotate(-45deg);
+        background:red;
+      }
+      100%{
+        transform:scale(1) rotate(180deg);
+        background:blue;
+      }
+    }
+  </code></pre>
+  <pre><code>
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+      }
+      to{
+        opacity:1;
+      }
+    }
+  </code></pre>
+</div>
+<div class="wrapper">
+
+  <div class="wrap_first wrap">
+    <div class="box">
+    </div>
+    <p>通常</p>
+    <pre><code>
+      .wrap_first:hover>.box{
+        animation:rotation 2s;
+      }
+    </code></pre>
+  </div>
+
+  <div class="wrap_second wrap">
+    <div class="box">
+    </div>
+    <p>rotation</p>
+    <pre><code>
+      .wrap_second:hover>.box{
+        animation:rotation 2s 0s ease-in 3 alternate none running;
+      }
+    </code></pre>
+  </div>
+
+
+  <div class="wrap_third wrap">
+    <div class="box">
+    </div>
+    <p>fadeIn</p>
+    <pre><code>
+      .wrap_third:hover>.box{
+        animation:fadeIn 3s 0s ease infinite reverse forwards running;
+      }
+    </code></pre>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

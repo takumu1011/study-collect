@@ -1,0 +1,11 @@
+body{
+  background:skyblue;
+}
+h1::after{
+  content:"style.cssが読み込まれています。";
+  color:#eee;
+  font-size:42px;
+}
+pre{
+  font-size:30px;
+}
